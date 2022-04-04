@@ -1,0 +1,40 @@
+.footer {
+    background-color: #00009A;
+    color: white;
+    padding: 1.5rem;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.footer h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.contacts-list-item {
+    margin-top: 1rem;
+    
+}
+
+.contacts-list-item-link{
+    text-decoration: none;
+    font-family: sans-serif;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    color: white;
+    transition: 0.2s ease-in;
+}
+
+.contacts-list-item :hover{
+    color: #00009A;
+    background-color: #FFFF33;
+}

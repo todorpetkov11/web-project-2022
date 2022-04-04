@@ -1,0 +1,92 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    margin: 0 10rem 0 0;
+}
+.main-main {
+    margin: 0.4rem 0 0 10rem;
+    border: 1px solid #99CCFF;
+    border-radius: 1.2rem 1.2rem 0 0;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    width: calc(75%) - 10rem;
+}
+
+.main-card {
+    position: relative;
+    padding: 1.5rem;
+    cursor: pointer;
+    margin: 1rem;
+    color: #00009A;
+    border: 1px solid white;
+    transition: 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.main-card .card-two-top-wrap {
+    position: relative;
+    width: 100%;
+}
+
+.main-card-title  {
+   width: 100%;
+   position: relative;
+   top: 6;
+}
+
+.main-card-title :first-child {
+    font-size: 1.8rem;
+}
+
+.main-card-title :nth-child(2) {
+    padding-left: 2.4rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.main-card-title :nth-child(3) {
+    opacity: 0.5;
+    text-transform: uppercase;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.main-card .main-card-explain {
+    
+    width: 50%;
+    font-size: 1.2rem;
+    text-align: center;
+    
+}
+
+.card-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-height: 50%;
+}
+
+.main-card .card-img {
+    max-width: 50%;
+    background: white;
+}
+
+
+.main-card > p {
+    font-size: 1.2rem;
+    padding-top: 1.2rem;
+    text-align: center;
+    
+}
+
+.main-card:hover {
+    border-color: #00009A;
+    border-radius: 2.5rem;  
+}

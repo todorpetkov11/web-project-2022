@@ -1,0 +1,51 @@
+.aside {
+    background-color: #99CCFF;
+    padding: 1rem;
+    
+}
+
+.search p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+}
+
+.search input {
+    padding: 0.2rem;
+    width: 70%;
+}
+
+.search button {
+    border-left: ivory 1px solid;
+    border-top: 1px white solid;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    border-radius: 50%;
+    padding: 0.2rem;
+    background-color: #00009A;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.search button:hover {
+    background-color: white;
+    color: #00009A;
+    border: 1px solid #00009A;
+}
+
+.aside-list-title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding-top: 1rem;
+    padding-bottom: 0.4rem;
+}
+
+.aside-list-list * {
+    margin-bottom: 0.3rem;
+}
+
+.aside-list-lists {
+    display: flex;
+    gap: 2rem;
+}

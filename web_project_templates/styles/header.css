@@ -1,0 +1,127 @@
+.header {
+    margin-bottom: 0.9rem;
+}
+
+.header-main {
+    position: relative;
+    background-color: #FFFF33;
+    display: flex;
+    padding: 1.5rem 3rem;
+    align-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    background: transparent;
+    height: auto;
+    width: auto;
+    max-width: 3.5rem;
+}
+
+.header-title-and-slogan {
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-slogan-slogan {
+    font-size: 1.2rem;
+    word-spacing: 0.5rem;
+    letter-spacing: 0.3rem;
+    font-family: sans-serif;
+}
+
+.middle-nav {
+    position: absolute;
+    bottom: 0;
+    right: 1.1rem;
+}
+
+.middle-nav-list {
+    display: flex;
+    gap: 0.2rem;
+    
+}
+
+.middle-nav-list-item {
+    display: table;
+    font-size: 0.85rem;
+    background-color: #FFFFEE ;
+    border: 0.1rem solid black;
+    text-align: center;
+    width: 4rem;
+    padding: 0.8rem 0.6rem;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    box-shadow: black 4px 20px 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.middle-nav-list-item:hover {
+    background-color: #00009A;
+    color: white;
+    
+}
+
+.middle-nav-list-item:hover a {
+    color: white;  
+}
+
+.middle-nav-list-item-link {
+    vertical-align: middle;
+    display: table-cell;
+    cursor: pointer;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.04rem;
+}
+
+.lower-nav {
+    background-color: #00009A;
+    padding: 1rem;
+    position: relative;
+}
+
+.lower-nav-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.lower-nav-list {
+    display: flex;
+    
+}
+
+.lower-nav-list-item {
+    padding: 1rem 0;
+    background-color: #00009A;
+    text-transform: lowercase;
+    
+}
+
+.lower-nav-list-item:last-child {
+    padding-right: 3rem;
+    border-bottom-right-radius: 3rem;
+    
+}
+
+.lower-nav-list-link {
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    vertical-align: middle;
+    display: table-cell;
+    text-decoration: none;
+    color: white;
+    border-right: 1px solid white;
+    padding: 0 1rem;
+}
+
+.lower-nav-list-item:last-child a {
+    border-right: none;
+}

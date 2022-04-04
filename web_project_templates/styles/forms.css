@@ -1,0 +1,112 @@
+
+.main-form {
+    position: relative;
+    margin: 4rem 30rem 0 30rem;
+    padding: 3rem;
+    border: 1px solid #00009A;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #00009A;
+    background-color: #FFFFA1;    
+}
+
+.form-label {
+    position: absolute;
+    background-color: white;
+    top: -1.5rem;
+    color: black;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid #00009A;
+}
+
+.main-form p {
+    margin-top: 1.8rem;
+}
+
+.form-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.label {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.input {
+    transition: 0.2s ease-in-out;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    color: #00009A;
+    border: 1px solid #00009A;
+}
+
+.input-invalid {
+    border-color: red;
+}
+
+.input-valid {
+    border-color: green;
+}
+
+.error {
+    background-color: white;
+    color: red;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    display: table;
+    visibility: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid orange;
+    width: 100%;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+}
+
+.error p {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+/* .email-error {
+    top: 20%;
+}
+
+.password-error {
+    top: 40%;
+}
+
+.re-password-error {
+    top: 60%;
+} */
+
+.error-visisble {
+    visibility: unset;
+}
+
+
+.form-btn {
+    margin-top: 1rem;
+    padding: 0.8rem 0.6rem;
+    width: 25%;
+    color: #00009A;
+    background-color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #00009A;
+}
+
+.form-btn:hover {
+    background-color: #00009A;
+    color: white;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
