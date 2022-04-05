@@ -63,6 +63,7 @@
     border-top-left-radius: 0.5rem;
     box-shadow: black 4px 20px 10px;
     transition: 0.2s ease-in-out;
+    cursor: pointer;
 }
 
 .middle-nav-list-item:hover {
@@ -73,6 +74,14 @@
 
 .middle-nav-list-item:hover a {
     color: white;  
+}
+
+.is-active {
+    background-color: #00009A;
+}
+
+.is-active a{
+    color: white;
 }
 
 .middle-nav-list-item-link {

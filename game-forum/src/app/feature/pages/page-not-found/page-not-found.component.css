@@ -1,0 +1,21 @@
+.not-found-section {
+    height: calc(100vh);
+    text-align: center;
+    color: #00009A;
+    padding-top: 7rem;
+    background-color: #FFFFF0;
+
+}
+
+.not-found-title {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    letter-spacing: 4px;
+}
+
+p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+}

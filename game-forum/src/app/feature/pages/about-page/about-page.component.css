@@ -1,0 +1,46 @@
+.about-title {
+    padding-top: 4rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.about-section{
+    margin: 2rem 10rem 2rem 10rem;
+    text-align: left;
+    background-color: #FFFFA1;
+    padding: 4rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    border: 1px solid #00009A;
+    color: #00009A;
+}
+
+.about-section-top p {
+    margin-bottom: 3rem;
+}
+
+.about-section-top img {
+    float: right;
+    border-radius: 2rem;
+}
+
+.about-section-bottom {
+    margin-top: 10rem;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.about-section-bottom p {
+    margin-bottom: 3rem;
+}
+
+.about-section-bottom img {
+    margin-bottom: 3rem;
+    border-radius: 2rem;
+    max-width: 50%;
+    max-height: 50%;
+}
