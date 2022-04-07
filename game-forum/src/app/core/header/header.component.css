@@ -1,5 +1,8 @@
 .header {
-    margin-bottom: 0.9rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .header-main {
@@ -69,6 +72,13 @@
 .middle-nav-list-item:hover {
     background-color: #00009A;
     color: white;
+}
+
+.middle-nav-list-item.logout:hover {
+    background-color: red;
+    color: white;
+    border-color: red;
+    border-bottom-color: #00009A;
 }
 
 

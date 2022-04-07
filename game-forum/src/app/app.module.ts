@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PagesModule } from './feature/pages/pages.module';
+import { ThreadsModule } from './feature/threads/threads.module';
 
 @NgModule({
   declarations: [
