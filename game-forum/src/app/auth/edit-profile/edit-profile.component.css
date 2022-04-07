@@ -67,3 +67,8 @@
     cursor: pointer;
     border-color: red;
 }
+
+
+.profile-btn.edit {
+    width: 100%;
+}

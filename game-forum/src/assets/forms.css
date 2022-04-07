@@ -40,6 +40,10 @@
     font-weight: bold;
 }
 
+.file-input {
+    display: none;
+}
+
 .input {
     transition: 0.2s ease-in-out;
     margin-bottom: 1rem;
@@ -49,6 +53,15 @@
     border: 1px solid #00009A;
 }
 
+.textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #00009A;
+    margin-bottom: 1rem;
+    resize: none;
+}
+
 .input-invalid {
     border-color: red;
 }
@@ -56,6 +69,16 @@
 .input-valid {
     border-color: green;
 }
+
+.file-upload {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
 
 .error {
     background-color: white;
@@ -76,17 +99,6 @@
     display: table-cell;
 }
 
-/* .email-error {
-    top: 20%;
-}
-
-.password-error {
-    top: 40%;
-}
-
-.re-password-error {
-    top: 60%;
-} */
 
 .error-visisble {
     visibility: unset;
@@ -111,3 +123,4 @@
     transition: 0.2s ease-in-out;
     cursor: pointer;
 }
+

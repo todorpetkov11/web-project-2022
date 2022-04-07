@@ -12,4 +12,6 @@ export class NewThreadComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
 }

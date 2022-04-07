@@ -1,1 +1,31 @@
-<p>new-thread works!</p>
+<main class="main-form">
+    <div class="form-label">
+        <span>New Thread</span>
+
+    </div>
+    <form class="form-form" action="" id="register-form">
+
+        <label class="label" for="name">Thread name</label>
+        <textarea class="textarea" name="name" id="" cols="1" rows="1"></textarea>
+
+        <label class="label" for="fileUpload">Thread image</label>
+        <input type="file" class="file-input"  #fileUpload>
+        <!-- (change)="onFileSelected($event)" -->
+        <div class="file-upload">
+
+            <!-- {{fileName || "No file uploaded yet."}} -->
+            <p>You haven't selected a file yet.</p>
+
+            <button class="form-btn upload" (click)="fileUpload.click()">
+                Upload
+            </button>
+        </div>
+
+        <label class="label" for="description">Description</label>
+        <textarea class="textarea" name="description" id="" cols="30" rows="10"></textarea>
+
+        
+    </form>
+
+    <button class="form-btn" type="submit" form="register-form" value="Submit">Submit</button>
+</main>

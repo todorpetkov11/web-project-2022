@@ -15,12 +15,13 @@ import { ThreadsModule } from './feature/threads/threads.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AuthModule,
+    ThreadsModule,
     CoreModule,
     PagesModule,
     AppRoutingModule,
     RouterModule,
-    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [
