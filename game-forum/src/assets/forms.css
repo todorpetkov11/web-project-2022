@@ -35,7 +35,7 @@
 }
 
 .label {
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem;
     font-size: 1.1rem;
     font-weight: bold;
 }
@@ -44,13 +44,29 @@
     display: none;
 }
 
+
+
 .input {
     transition: 0.2s ease-in-out;
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem;
     padding: 0.5rem;
     width: 100%;
     color: #00009A;
     border: 1px solid #00009A;
+}
+
+.select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #00009A;
+    margin-bottom: 1.3rem;
+    text-align: center;
+}
+
+.option {
+    padding: 0.5rem;
+    
 }
 
 .textarea {
@@ -58,7 +74,7 @@
     padding: 0.5rem;
     font-size: 1rem;
     border: 1px solid #00009A;
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem;
     resize: none;
 }
 
@@ -70,12 +86,14 @@
     border-color: green;
 }
 
+
+
 .file-upload {
     display: flex;
     justify-content: space-evenly;
     align-content: center;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem;
     padding: 0.5rem;
 }
 

@@ -25,12 +25,6 @@ const routes: Routes = [
   },
 
   {
-    path: 'create-thread',
-    component: NewThreadComponent,
-    data: { animation: 'createThreadPage'}
-  },
-
-  {
     path: '**',
     component: PageNotFoundComponent
   }

@@ -15,6 +15,7 @@ import { ThreadsModule } from './feature/threads/threads.module';
   ],
   imports: [
     BrowserModule,
+    
     BrowserAnimationsModule,
     AuthModule,
     ThreadsModule,

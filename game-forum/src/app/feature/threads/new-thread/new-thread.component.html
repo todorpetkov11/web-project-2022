@@ -8,6 +8,16 @@
         <label class="label" for="name">Thread name</label>
         <textarea class="textarea" name="name" id="" cols="1" rows="1"></textarea>
 
+        <label class="label" for="game">Game</label>
+        <textarea class="textarea" name="game" id="" cols="1" rows="1"></textarea>
+
+        <label class="label" for="genre">Game genre</label>
+        <select class="select" name="genre">
+            <option value="mmorpg">MMORPG</option>
+            <option value="shooter">Shooter</option>
+            <option value="strategy">Strategy</option>
+            <option value="battleroyale">Battle royale</option>
+          </select>
         <label class="label" for="fileUpload">Thread image</label>
         <input type="file" class="file-input"  #fileUpload>
         <!-- (change)="onFileSelected($event)" -->
@@ -22,8 +32,10 @@
         </div>
 
         <label class="label" for="description">Description</label>
-        <textarea class="textarea" name="description" id="" cols="30" rows="10"></textarea>
+        <textarea class="textarea" name="description" cols="1" rows="2"></textarea>
 
+        <label class="label" for="content">Content</label>
+        <textarea class="textarea" name="content" id="" cols="30" rows="10"></textarea>
         
     </form>
 

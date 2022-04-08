@@ -7,6 +7,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ThreadDetailsComponent } from './thread-details/thread-details.component';
 import { Router } from '@angular/router';
 import { ThreadsRoutingModule } from './threads-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MyThreadsComponent } from './my-threads/my-threads.component';
 
 
 
@@ -15,10 +17,12 @@ import { ThreadsRoutingModule } from './threads-routing.module';
     ThreadsListComponent,
     ThreadsListItemComponent,
     NewThreadComponent,
-    ThreadDetailsComponent
+    ThreadDetailsComponent,
+    MyThreadsComponent
   ],
   imports: [
     CommonModule,
+    FontAwesomeModule,
     SharedModule,
     ThreadsRoutingModule
   ],
