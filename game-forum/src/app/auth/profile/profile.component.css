@@ -10,7 +10,7 @@
     color: #00009A;
     background-color: #FFFFA1;
     max-width: 100%;
-    text-align: center;    
+    text-align: center;
 }
 
 
@@ -29,7 +29,8 @@
     font-size: 1.2rem;
 }
 
-.profile-info-info h3, h2 {
+.profile-info-info h3,
+h2 {
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
@@ -50,20 +51,19 @@
     text-transform: uppercase;
     border-radius: 0.5rem;
     border: 0.1rem solid #00009A;
+    transition: 0.2s ease-in-out;
 }
 
 
 .profile-btn:hover {
     background-color: #00009A;
     color: white;
-    transition: 0.2s ease-in-out;
     cursor: pointer;
 }
 
 .profile-btn.delete:hover {
     background-color: red;
     color: white;
-    transition: 0.2s ease-in-out;
     cursor: pointer;
     border-color: red;
 }

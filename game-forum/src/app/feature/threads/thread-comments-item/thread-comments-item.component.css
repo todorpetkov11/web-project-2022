@@ -1,0 +1,28 @@
+.comment {
+    border: 1px solid #99CCFF;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+}
+
+.comment-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    
+}
+
+.comment-author-pfp {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.comment-author {
+    color: #00009A;
+    opacity: 0.6;
+    font-size: 1.1rem;
+    cursor: pointer;
+}

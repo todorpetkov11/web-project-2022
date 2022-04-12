@@ -8,10 +8,8 @@
     margin: 0.4rem 0 0 10rem;
     border: 1px solid #99CCFF;
     border-radius: 1.2rem 1.2rem 0 0;
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
     width: calc(75%) - 10rem;
 }
 

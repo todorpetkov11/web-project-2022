@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 @Component({
   selector: 'app-new-thread',
@@ -7,11 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewThreadComponent implements OnInit {
 
-  constructor() { }
+  
+
+  constructor(private db: AngularFireDatabase) { }
 
   ngOnInit(): void {
   }
 
-  
+  // saveData(inputValue: string) {
+  //   const ref = this.db.list("threads");
+  //   ref.push(inputValue).then((resp) => {
+  //     console.log(resp)
+  //   }).catch((error) => {
+  //     console.log(error)
+  //   })
+
+  // }
 
 }
