@@ -1,34 +1,47 @@
 <main class="main-form">
     <div class="form-label">
         <span>Register</span>
-        
+
     </div>
-    <form class="form-form" action="" id="register-form">
+    <form [formGroup]="form" class="form-form" id="register-form" (submit)="onSubmit()">
+
+        <div class="error req-error" [ngClass]="{'error-visisble': errorMsg !== '',
+         '': errorMsg === ''}">
+            <p>{{errorMsg}}</p>
+        </div>
 
         <label class="label" for="name">Username</label>
-        <input class="input" type="text" name="name">
+        <input formControlName="username" class="input" type="text" name="name">
+
+        <div class="error username-error" [ngClass]="{'error-visisble': form.controls['username'].touched && 
+        form.controls['username'].invalid}">
+            <p>Invalid username! Be more creative!</p>
+        </div>
 
         <label class="label" for="email">Email</label>
-        <input class="input" type="email" name="email">
+        <input formControlName="email" class="input" type="email" name="email">
 
-        <div class="error email-error error-visisble">
+        <div class="error email-error" [ngClass]="{'error-visisble': form.controls['email'].touched && 
+        form.controls['email'].invalid}">
             <p>This is not a valid email</p>
         </div>
 
         <label class="label" for="password">Password</label>
-        <input class="input" type="password" name="password">
+        <input formControlName="password" class="input" type="password" name="password">
 
-        <div class="error password-error error-visisble">
+        <div class="error password-error" [ngClass]="{'error-visisble': form.controls['password'].touched && 
+        form.controls['password'].invalid}">
             <p>Invalid password</p>
         </div>
 
         <label class="label" for="re-password">Repeat Password</label>
-        <input class="input" type="password" name="re-password">
+        <input formControlName="rePassword" class="input" type="password" name="re-password">
 
-        <div class="error re-password-error error-visisble">
+        <div class="error re-password-error" [ngClass]="{'error-visisble': form.controls['rePassword'].touched && 
+        form.controls['rePassword'].invalid}">
             <p>Passwords don't match</p>
         </div>
-        
+
     </form>
 
     <button class="form-btn" type="submit" form="register-form" value="Submit">Submit</button>

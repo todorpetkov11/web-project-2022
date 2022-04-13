@@ -8,43 +8,47 @@
                         src="../../../assets/gamepedia.jpg" alt=""> -->
                 </section>
                 <section class="header-slogan">
-                    <img class="header-logo"
-                        src="../../../assets/gamepedia.jpg" alt="">
+                    <img class="header-logo" src="../../../assets/gamepedia.jpg" alt="">
                 </section>
             </div>
             <section class="middle-nav">
                 <ul class="middle-nav-list">
                     <li class="middle-nav-list-item" routerLink="/home" routerLinkActive="is-active">
-                        <a class="middle-nav-list-item-link" >
+                        <a class="middle-nav-list-item-link">
                             Home
                         </a>
                     </li>
                     <li class="middle-nav-list-item" routerLink="/about" routerLinkActive="is-active">
-                        <a class="middle-nav-list-item-link" >
-                            About
+                        <a class="middle-nav-list-item-link">
+                            About Us
                         </a>
                     </li>
-                    <li class="middle-nav-list-item" routerLink="/login" routerLinkActive="is-active">
-                        <a class="middle-nav-list-item-link" >
-                            Login
-                        </a>
-                    </li>
-                    <li class="middle-nav-list-item" routerLink="/register" routerLinkActive="is-active">
-                        <a class="middle-nav-list-item-link" >
-                            Register
-                        </a>
-                    </li>
-                    <li class="middle-nav-list-item" routerLink="/profile" routerLinkActive="is-active">
-                        <a class="middle-nav-list-item-link" >
-                            My profile
-                        </a>
-                    </li>
-                    <li class="middle-nav-list-item logout">
-                        <a class="middle-nav-list-item-link logout" href="">
-                            Logout
-                        </a>
-                    </li>
-                    
+                    <div class="current-user" *ngIf="!isLogged()">
+                        <li class="middle-nav-list-item" routerLink="/login" routerLinkActive="is-active">
+                            <a class="middle-nav-list-item-link">
+                                Login
+                            </a>
+                        </li>
+                        <li class="middle-nav-list-item" routerLink="/register" routerLinkActive="is-active">
+                            <a class="middle-nav-list-item-link">
+                                Register
+                            </a>
+                        </li>
+                    </div>
+                    <div class="current-user" *ngIf="isLogged()">
+
+                        <li class="middle-nav-list-item" routerLink="/profile" routerLinkActive="is-active">
+                            <a class="middle-nav-list-item-link">
+                                My profile
+                            </a>
+                        </li>
+                        <li class="middle-nav-list-item logout">
+                            <a class="middle-nav-list-item-link logout" (click)="onLogout()">
+                                Logout
+                            </a>
+                        </li>
+                    </div>
+
                 </ul>
             </section>
 
