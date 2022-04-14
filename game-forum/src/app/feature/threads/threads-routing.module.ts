@@ -6,7 +6,7 @@ import { ThreadDetailsComponent } from './thread-details/thread-details.componen
 
 const routes: Routes = [
     {
-        path: 'thread',
+        path: 'thread/:threadId',
         component: ThreadDetailsComponent,
         data: { animation: 'threadDetailsPage' }
     },

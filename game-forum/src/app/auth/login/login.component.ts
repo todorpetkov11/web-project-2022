@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/auth/services/user.service';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -23,21 +23,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.errorMsg = '';
-    this.userService.login(this.form.value).subscribe({
-      next: () => {
-        this.router.navigate(['/home'])
-      },
-      error: (e) => {
-        if (e.code === 'auth/user-not-found') {
-          this.errorMsg = "User not found!"
-        }
-        else {
-          this.errorMsg = "Invalid password!"
+    this.userService.login(this.form.value).subscribe(
+      {
+        complete: () => {
+          this.router.navigate(['/home']);
+        },
+        error: (err) => {
+          this.errorMsg = 'Invalid email or password.'
         }
       }
-    })
-
+    )
   }
 
 }

@@ -4,18 +4,16 @@
 
     </div>
     <section class="profile-info">
-        <img class="profile-pic" src="https://cdn.mos.cms.futurecdn.net/7pUbqBX8MnDfiUoh67iSX8.jpg"
+        <img class="profile-pic" src="{{profile.photoUrl}}"
             alt="profile_picture">
 
         <section class="profile-info-info">
             <label for="username">Username</label>
-            <h2 class="username">todor123</h2>
+            <h2 class="username">{{profile.username}}</h2>
 
             <label for="memberships">Threads</label>
-            <h3 class="memberships">5</h3>
+            <h3 class="memberships">{{profile.threads.length}}</h3>
 
-            <label for="memberships">Memeberships</label>
-            <h3 class="memberships">5</h3>
         </section>
 
     </section>

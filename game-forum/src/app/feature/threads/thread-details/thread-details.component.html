@@ -4,8 +4,8 @@
         <section class="main-details">
             <div class="details-top-wrap">
                 <section class="main-details-title">
-                    <p class="title">New content on patch 3.3.5</p>
-                    <p class="game">World of Warcraft</p>
+                    <p class="title">{{thread.title}}</p>
+                    <p class="game">{{thread.game}}</p>
                 </section>
 
             </div>
@@ -14,11 +14,11 @@
                     src="https://media.moddb.com/images/downloads/1/156/155405/Word_of_Warcraft_62.jpg" alt="">
             </div>
 
-            <p class="details-description">New patch 3.3.5 notes.</p>
+            <p class="details-description">{{thread.description}}</p>
 
             <div class="details-bot-wrap">
-                <h3>todor123</h3>
-                <h3>Likes: 1.2k</h3>
+                <h3 routerLink="/profile/{{thread.authorId}}">{{thread.authorName}}</h3>
+                <h3>Likes: {{likes.length}}</h3>
                 <div class="details-actions">
                     <fa-icon [ngClass]="{'liked': liked, '': !liked}" (click)="onLikeClick()" class="icon"
                         [icon]="faHeart"></fa-icon>

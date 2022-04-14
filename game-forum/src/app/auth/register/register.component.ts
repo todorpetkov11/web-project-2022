@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/auth/services/user.service';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -25,16 +25,8 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    this.errorMsg = '';
-    this.userService.register(this.form.value).subscribe({
-      next: () => {
-        this.router.navigate(['/login'])
-      },
-      error: (e) => {
-        this.errorMsg = e.code
-      }
-    })
-
-  }
+    this.userService.register(this.form.value).subscribe()
+    this.router.navigate(['/login'])
+   }
 
 }

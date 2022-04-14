@@ -6,3 +6,9 @@
     flex-direction: row;
     /* width: calc(75%) - 10rem; */
 }
+
+.loading {
+    text-align: center;
+    font-size: 2rem;
+    margin: 0.4rem 0 0 10rem;
+}

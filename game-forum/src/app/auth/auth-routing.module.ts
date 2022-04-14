@@ -18,7 +18,7 @@ const routes: Routes = [
     },
 
     {
-        path: 'profile',
+        path: 'profile/:profileId',
         component: ProfileComponent,
         data: { animation: 'profilePage' }
     },

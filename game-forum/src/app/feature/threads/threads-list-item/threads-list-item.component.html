@@ -1,9 +1,10 @@
-<section class="main-card" routerLink="/thread">
+<section class="main-card" routerLink="/thread/{{thread.id}}">
     <div class="card-top-wrap">
         <section class="main-card-title">
-            <p class="title">Patch notes</p>
-            <p class="game">World of Warcraft</p>
+            <p class="title">{{thread.title}}</p>
+            <p class="game">{{thread.game}}</p>
         </section>
+        
     </div>
     <div class="card-wrap">
         <section class="main-card-explain">

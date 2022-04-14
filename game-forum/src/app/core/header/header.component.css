@@ -64,6 +64,7 @@
 
 .current-user {
     display: flex;
+    gap: 0.2rem;
 }
 
 .middle-nav-list-item:hover {

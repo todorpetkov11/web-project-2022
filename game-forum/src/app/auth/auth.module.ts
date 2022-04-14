@@ -6,8 +6,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserService } from './services/user.service';
-import { getAuth, provideAuth } from '@angular/fire/auth';
+import { UserService } from '../core/services/user.service';
 
 
 
@@ -22,8 +21,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
     CommonModule,
     AuthRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    provideAuth(() => getAuth()),
+    ReactiveFormsModule
   ],
   providers: [
     UserService
