@@ -1,27 +1,22 @@
 # GameForum
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
+
+Gampedia is forum based website for gaming news and topics of discussion.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
+## Description
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+It has a login/register functionality and after a user has been authenticated, they can create new threads, like existing ones
+or comment underneath in the comments section.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+It fetches data from a JSON server, which also stores thread and profile images in base64 format (very inconvenient, yet useful enough for presentational purposes.)
 
-## Running unit tests
+The asdie part provides user with ability to look up threads by genre or game name or search a thread name with the help of quicksearch bar.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Users can check out their created threads and perform delete or edit operations on them.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+They can also perform such operations on their own profiles, changing their credentials and profile photos.
