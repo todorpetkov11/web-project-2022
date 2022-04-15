@@ -8,5 +8,7 @@ export interface IThread {
     authorName: string,
     game: string,
     description: string,
+    likes: [],
+    imagePath: any
 
 }

@@ -1,6 +1,6 @@
 <div *ngIf="threads" class="main-main">
     <app-threads-list-item *ngFor="let thread of threads" [thread]="thread"></app-threads-list-item>
-    <div *ngIf="threads.length === 0">No Themes!</div>
+    <div *ngIf="threads.length === 0">No threads!</div>
 </div>
 <div *ngIf="!threads" class="loading">
     <p>Loading...</p>

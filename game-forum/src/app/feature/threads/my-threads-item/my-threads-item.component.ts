@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IThread } from 'src/app/core/interfaces/thread';
 
 @Component({
   selector: 'app-my-threads-item',
@@ -9,6 +10,9 @@ export class MyThreadsItemComponent implements OnInit {
 
   constructor() { }
 
+  @Input() thread: IThread
+
+  
   ngOnInit(): void {
   }
 

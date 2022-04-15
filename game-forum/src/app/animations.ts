@@ -12,6 +12,7 @@ export const slideInAnimation = trigger('routeAnimations', [
         top: 0,
         right: 0,
         width: '100%',
+        minHeight: '100vh'
       }),
 
     ], { optional: true }),
@@ -19,6 +20,7 @@ export const slideInAnimation = trigger('routeAnimations', [
       style({
         right: '-20%',
         opacity: 0,
+        minHeight: '100vh'
       })
     ], { optional: true }),
     query(':leave', animateChild(), { optional: true }),

@@ -1,43 +1,46 @@
-<main class="main-form">
-    <div class="form-label">
-        <span>New Thread</span>
+<main>
+    <section class="main-form">
+        <div class="form-label">
+            <span>New Thread</span>
 
-    </div>
-    <form class="form-form" id="register-form">
-
-        <label class="label" for="name">Thread name</label>
-        <textarea class="textarea" name="name" id="" cols="1" rows="1"></textarea>
-
-        <label class="label" for="game">Game</label>
-        <textarea class="textarea" name="game" id="" cols="1" rows="1"></textarea>
-
-        <label class="label" for="genre">Game genre</label>
-        <select class="select" name="genre">
-            <option value="mmorpg">MMORPG</option>
-            <option value="shooter">Shooter</option>
-            <option value="strategy">Strategy</option>
-            <option value="battleroyale">Battle royale</option>
-          </select>
-        <label class="label" for="fileUpload">Thread image</label>
-        <input type="file" class="file-input"  #fileUpload>
-        <!-- (change)="onFileSelected($event)" -->
-        <div class="file-upload">
-
-            <!-- {{fileName || "No file uploaded yet."}} -->
-            <p>You haven't selected a file yet.</p>
-
-            <button class="form-btn upload" (click)="fileUpload.click()">
-                Upload
-            </button>
         </div>
+        <form [formGroup]="form" class="form-form" id="thread-form" (submit)="onSubmit()">
 
-        <label class="label" for="description">Description</label>
-        <textarea class="textarea" name="description" cols="1" rows="2"></textarea>
+            <label class="label" for="title">Thread name</label>
+            <textarea formControlName="title" class="textarea" name="title" id="" cols="1" rows="1"></textarea>
 
-        <label class="label" for="content">Content</label>
-        <textarea #content class="textarea" name="content" id="" cols="30" rows="10"></textarea>
-        
-    </form>
+            <label class="label" for="game">Game</label>
+            <textarea formControlName="game" class="textarea" name="game" id="" cols="1" rows="1"></textarea>
 
-    <button class="form-btn" type="button">Submit</button>
+            <label class="label" for="genre">Game genre</label>
+            <select formControlName="genre" class="select" name="genre">
+                <option value="mmorpg">MMORPG</option>
+                <option value="shooter">Shooter</option>
+                <option value="strategy">Strategy</option>
+                <option value="battleroyale">Battle royale</option>
+            </select>
+
+            <label class="label" for="fileUpload">Thread image</label>
+
+            <input formControlName="image" type="file" class="file-input" #fileUpload (change)="onFileSelected($event)">
+
+            <div class="file-upload">
+
+                <p>{{fileName || "You haven't selected a file yet."}}</p>
+
+                <button class="form-btn" type="button" (click)="fileUpload.click()">
+                    Upload
+                </button>
+            </div>
+
+            <label class="label" for="description">Description</label>
+            <textarea formControlName="description" class="textarea" name="description" cols="1" rows="2"></textarea>
+
+            <label class="label" for="content">Content</label>
+            <textarea formControlName="content" class="textarea" name="content" id="" cols="30" rows="10"></textarea>
+
+        </form>
+
+        <button class="form-btn" type="submit" form="thread-form" >Submit</button>
+    </section>
 </main>

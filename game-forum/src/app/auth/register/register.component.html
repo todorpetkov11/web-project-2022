@@ -1,49 +1,51 @@
-<main class="main-form">
-    <div class="form-label">
-        <span>Register</span>
+<main>
+    <section class="main-form">
+        <div class="form-label">
+            <span>Register</span>
 
-    </div>
-    <form [formGroup]="form" class="form-form" id="register-form" (submit)="onSubmit()">
+        </div>
+        <form [formGroup]="form" class="form-form" id="register-form" (submit)="onSubmit()">
 
-        <div class="error req-error" [ngClass]="{'error-visisble': errorMsg !== '',
+            <div class="error req-error" [ngClass]="{'error-visisble': errorMsg !== '',
          '': errorMsg === ''}">
-            <p>{{errorMsg}}</p>
-        </div>
+                <p>{{errorMsg}}</p>
+            </div>
 
-        <label class="label" for="name">Username</label>
-        <input formControlName="username" class="input" type="text" name="name">
+            <label class="label" for="name">Username</label>
+            <input formControlName="username" class="input" type="text" name="name">
 
-        <div class="error username-error" [ngClass]="{'error-visisble': form.controls['username'].touched && 
+            <div class="error username-error" [ngClass]="{'error-visisble': form.controls['username'].touched && 
         form.controls['username'].invalid}">
-            <p>Invalid username! Be more creative!</p>
-        </div>
+                <p>Invalid username! Be more creative!</p>
+            </div>
 
-        <label class="label" for="email">Email</label>
-        <input formControlName="email" class="input" type="email" name="email">
+            <label class="label" for="email">Email</label>
+            <input formControlName="email" class="input" type="email" name="email">
 
-        <div class="error email-error" [ngClass]="{'error-visisble': form.controls['email'].touched && 
+            <div class="error email-error" [ngClass]="{'error-visisble': form.controls['email'].touched && 
         form.controls['email'].invalid}">
-            <p>This is not a valid email</p>
-        </div>
+                <p>This is not a valid email</p>
+            </div>
 
-        <label class="label" for="password">Password</label>
-        <input formControlName="password" class="input" type="password" name="password">
+            <label class="label" for="password">Password</label>
+            <input formControlName="password" class="input" type="password" name="password">
 
-        <div class="error password-error" [ngClass]="{'error-visisble': form.controls['password'].touched && 
+            <div class="error password-error" [ngClass]="{'error-visisble': form.controls['password'].touched && 
         form.controls['password'].invalid}">
-            <p>Invalid password</p>
-        </div>
+                <p>Invalid password</p>
+            </div>
 
-        <label class="label" for="re-password">Repeat Password</label>
-        <input formControlName="rePassword" class="input" type="password" name="re-password">
+            <label class="label" for="re-password">Repeat Password</label>
+            <input formControlName="rePassword" class="input" type="password" name="re-password">
 
-        <div class="error re-password-error" [ngClass]="{'error-visisble': form.controls['rePassword'].touched && 
+            <div class="error re-password-error" [ngClass]="{'error-visisble': form.controls['rePassword'].touched && 
         form.controls['rePassword'].invalid}">
-            <p>Passwords don't match</p>
-        </div>
+                <p>Passwords don't match</p>
+            </div>
 
-    </form>
+        </form>
 
-    <button class="form-btn" type="submit" form="register-form" value="Submit">Submit</button>
-    <p>Already have an account? <a routerLink="/login">Login here!</a></p>
+        <button class="form-btn" type="submit" form="register-form" value="Submit">Submit</button>
+        <p>Already have an account? <a routerLink="/login">Login here!</a></p>
+    </section>
 </main>

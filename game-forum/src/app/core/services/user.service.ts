@@ -14,12 +14,26 @@ const apiUrl = 'http://localhost:3000'
 export class UserService {
 
   get isLogged() {
-    return localStorage.getItem('user')
+    if(localStorage.getItem('user')) {
+      return true
+    } 
+    return false
   }
   
   get currentUserId() {
     const user = localStorage.getItem('user')
-    return JSON.parse(user!).profileId
+    if (user) {
+      return JSON.parse(user!).id
+    }
+    
+  }
+
+  get currentUserUsername() {
+    const user = localStorage.getItem('user')
+    if (user) {
+      return JSON.parse(user!).username
+    }
+    
   }
 
   constructor(private http: HttpClient) { }
@@ -37,10 +51,10 @@ export class UserService {
 
   logout() {
     localStorage.removeItem('user')
+    console.log(localStorage)
   }
 
-
-  getProfile(profileId: string): Observable<IProfile> {
-    return this.http.get<IProfile>(`${apiUrl}/profiles/${profileId}`)
+  getProfile(userId: string): Observable<IProfile> {
+    return this.http.get<IProfile>(`${apiUrl}/users/${userId}`)
   }
 }

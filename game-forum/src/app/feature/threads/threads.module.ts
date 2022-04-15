@@ -11,6 +11,7 @@ import { MyThreadsComponent } from './my-threads/my-threads.component';
 import { MyThreadsItemComponent } from './my-threads-item/my-threads-item.component';
 import { ThreadCommentsComponent } from './thread-comments/thread-comments.component';
 import { ThreadCommentsItemComponent } from './thread-comments-item/thread-comments-item.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -29,6 +30,8 @@ import { ThreadCommentsItemComponent } from './thread-comments-item/thread-comme
     CommonModule,
     FontAwesomeModule,
     SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
     ThreadsRoutingModule
   ],
   exports: [

@@ -1,6 +1,8 @@
+import { toBase64String } from '@angular/compiler/src/output/source_map';
 import { Component, OnInit } from '@angular/core';
 import { IThread } from 'src/app/core/interfaces/thread';
 import { ThreadService } from 'src/app/core/services/thread.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-threads-list',
@@ -9,7 +11,7 @@ import { ThreadService } from 'src/app/core/services/thread.service';
 })
 export class ThreadsListComponent implements OnInit {
 
-  constructor(private threadService: ThreadService) { }
+  constructor(private sanitizer: DomSanitizer, private threadService: ThreadService,) { }
 
   threads: IThread[];
 
@@ -18,7 +20,9 @@ export class ThreadsListComponent implements OnInit {
     this.threadService.getAllThreads().subscribe({
       next: (threads) => {
         this.threads = threads
-        console.log(threads)
+        this.threads.forEach(thread => {
+          thread.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl(thread.photoUrl)
+        })
       }
     })
   }

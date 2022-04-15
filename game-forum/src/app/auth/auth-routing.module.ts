@@ -1,4 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticationGuard } from '../core/guards/auth.guard';
+import { MyThreadsComponent } from '../feature/threads/my-threads/my-threads.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -18,15 +20,23 @@ const routes: Routes = [
     },
 
     {
+        path: 'profile/:profileId/threads',
+        component: MyThreadsComponent,
+        
+        data: { animation: 'myThreadsPage' }
+    },
+
+    {
         path: 'profile/:profileId',
         component: ProfileComponent,
+        canActivate: [AuthenticationGuard],
         data: { animation: 'profilePage' }
     },
 
     {
         path: 'edit-profile',
         component: EditProfileComponent,
-        data: { animation: 'editProfile'}
+        data: { animation: 'editProfile' }
     }
 
 ];

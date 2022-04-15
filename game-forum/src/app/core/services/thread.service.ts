@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { ILike } from '../interfaces/like';
 import { IThread } from '../interfaces/thread';
 
@@ -21,11 +21,16 @@ export class ThreadService {
     return this.http.get<IThread>(`${apiUrl}/threads/${threadId}`)
   }
 
+  getThreadsByProfileId(profileId: string): Observable<IThread[]> {
+    return this.http.get<IThread[]>(`${apiUrl}/threads/?authorId=${profileId}`)
+  }
+
   getThreadLikes(threadId: string): Observable<ILike[]> {
     return this.http.get<ILike[]>(`${apiUrl}/likes/?threadId=${threadId}`)
   }
 
-  likeThread(data: { threadId: string, userId: string }): Observable<ILike> {
-    return this.http.post<ILike>(`${apiUrl}/likes`, data)
+  createThread(threadData: {}): Observable<IThread> {
+    return this.http.post<IThread>(`${apiUrl}/threads`, threadData)
   }
+
 }

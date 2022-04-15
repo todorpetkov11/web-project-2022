@@ -43,7 +43,7 @@
                             </a>
                         </li>
                         <li class="middle-nav-list-item logout">
-                            <a class="middle-nav-list-item-link logout" (click)="onLogout()">
+                            <a class="middle-nav-list-item-link logout" href="" (click)="onLogout()">
                                 Logout
                             </a>
                         </li>
@@ -57,14 +57,14 @@
 
     <section class="lower-nav">
         <div class="lower-nav-container">
-            <ul class="lower-nav-list">
+            <ul class="lower-nav-list"> 
                 <li class="lower-nav-list-item">
                     <a class="lower-nav-list-link" routerLink="/create-thread">
                         create thread
                     </a>
                 </li>
                 <li class="lower-nav-list-item">
-                    <a class="lower-nav-list-link" routerLink="/my-threads">
+                    <a class="lower-nav-list-link" routerLink="/profile/{{userProfile}}/threads">
                         my threads
                     </a>
                 </li>

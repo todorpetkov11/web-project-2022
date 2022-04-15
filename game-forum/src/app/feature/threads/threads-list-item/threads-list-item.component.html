@@ -4,15 +4,13 @@
             <p class="title">{{thread.title}}</p>
             <p class="game">{{thread.game}}</p>
         </section>
-        
+
     </div>
     <div class="card-wrap">
         <section class="main-card-explain">
             <p>New patch 3.3.5a notes, new instances and much more.
             </p>
         </section>
-        <img class="card-img"
-        src="https://media.moddb.com/images/downloads/1/156/155405/Word_of_Warcraft_62.jpg"
-        alt="">
+        <img class="card-img" [src]="thread.imagePath" alt="">
     </div>
 </section>

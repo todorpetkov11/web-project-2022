@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -25,7 +24,9 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-    this.userService.register(this.form.value).subscribe()
+    const data = this.form.value
+    data["photoUrl"] = "../../../assets/gamepedia.jpg"
+    this.userService.register(data).subscribe()
     this.router.navigate(['/login'])
    }
 
