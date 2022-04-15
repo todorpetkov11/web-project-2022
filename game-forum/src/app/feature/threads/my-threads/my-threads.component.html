@@ -1,14 +1,14 @@
-<main class="main-profile">
-    <div class="form-label">
-        <span>My threads</span>
-    </div>
-    <section class="profile-info">
-        <app-my-threads-item *ngFor="let thread of threads" [thread]="thread"></app-my-threads-item>
-        <router-outlet></router-outlet>
-        <div *ngIf="threads.length === 0">No threads!</div>
+<main>
+    <section class="main-profile">
+        <div class="form-label">
+            <span>My threads</span>
+        </div>
+        <section class="profile-info">
+            <app-my-threads-item *ngFor="let thread of threads" [thread]="thread"></app-my-threads-item>
+            <div *ngIf="threads.length === 0">No threads!</div>
+        </section>
+        <div *ngIf="!threads" class="loading">
+            <p>Loading...</p>
+        </div>
     </section>
-    <div *ngIf="!threads" class="loading">
-        <p>Loading...</p>
-    </div>
 </main>
-

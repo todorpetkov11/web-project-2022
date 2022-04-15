@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
@@ -9,7 +9,25 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router, private cd: ChangeDetectorRef,) { }
+
+  fileName = "You haven\'t selected a file yet.";
+  file: File;
+
+  onFileSelected(event: any) {
+    const reader = new FileReader
+    this.file = event.target.files[0];
+    if (this.file) {
+      this.fileName = this.file.name;
+      reader.readAsDataURL(this.file);
+      reader.onload = () => {
+        this.form.patchValue({
+          photoUrl: reader.result
+        });
+        this.cd.markForCheck();
+      };
+    }
+  }
 
   errorMsg: string = ''
 
@@ -17,7 +35,8 @@ export class RegisterComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     username: new FormControl('', [Validators.required, Validators.maxLength(15)]),
     password: new FormControl('', [Validators.required]),
-    rePassword: new FormControl('', [Validators.required])
+    rePassword: new FormControl('', [Validators.required]),
+    photoUrl: new FormControl('')
   })
 
   ngOnInit(): void {
@@ -25,7 +44,6 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     const data = this.form.value
-    data["photoUrl"] = "../../../assets/gamepedia.jpg"
     this.userService.register(data).subscribe()
     this.router.navigate(['/login'])
    }

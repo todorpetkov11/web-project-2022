@@ -1,7 +1,12 @@
 <div class="main">
     <app-aside></app-aside>
     <div class="main-main">
+        <section class="profile-actions" *ngIf="thread.authorId == currentUser!">
+            <button class="profile-btn delete" (click)="onDelete()" >Delete</button>
+            <button class="profile-btn" routerLink="/edit-profile">Edit</button>
+        </section>
         <section class="main-details">
+            
             <div class="details-top-wrap">
                 <section class="main-details-title">
                     <p class="title">{{thread.title}}</p>
@@ -10,15 +15,13 @@
 
             </div>
             <div class="img-wrap">
-                <img class="details-img"
-                    src="{{thread.photoUrl}}" alt="">
+                <img class="details-img" src="{{thread.photoUrl}}" alt="">
             </div>
-
-            <p class="details-description">{{thread.description}}</p>
 
             <div class="details-bot-wrap">
                 <h3 routerLink="/profile/{{thread.authorId}}">{{thread.authorName}}</h3>
                 <h3>Likes: {{likes.length}}</h3>
+                
                 <div class="details-actions">
                     <fa-icon [ngClass]="{'liked': !liked, '': liked}" (click)="onLikeClick()" class="icon"
                         [icon]="faHeart"></fa-icon>
@@ -40,6 +43,8 @@
                 3.3.5 comes with Icecrown Citadel instance both heroic and normal, for 10 and 25 people respectively.
 
             </p>
+
+            
         </section>
 
         <app-thread-comments></app-thread-comments>

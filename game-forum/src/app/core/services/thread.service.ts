@@ -25,12 +25,20 @@ export class ThreadService {
     return this.http.get<IThread[]>(`${apiUrl}/threads/?authorId=${profileId}`)
   }
 
+  getThreadsWithParams(searchBy: string, param: string): Observable<IThread[]> {
+    return this.http.get<IThread[]>(`${apiUrl}/threads/?${searchBy}=${param}`)
+  }
+
   getThreadLikes(threadId: string): Observable<ILike[]> {
     return this.http.get<ILike[]>(`${apiUrl}/likes/?threadId=${threadId}`)
   }
 
   createThread(threadData: {}): Observable<IThread> {
     return this.http.post<IThread>(`${apiUrl}/threads`, threadData)
+  }
+
+  deleteThread(threadId: string): Observable<IThread> {
+    return this.http.delete<IThread>(`${apiUrl}/threads/${threadId}`)
   }
 
 }

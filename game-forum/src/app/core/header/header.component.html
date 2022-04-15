@@ -37,7 +37,7 @@
                     </div>
                     <div class="current-user" *ngIf="isLogged()">
 
-                        <li class="middle-nav-list-item" routerLink="/profile/{{userProfile}}" routerLinkActive="is-active">
+                        <li class="middle-nav-list-item" routerLink="/profile/{{userProfile()}}" routerLinkActive="is-active">
                             <a class="middle-nav-list-item-link">
                                 My profile
                             </a>
@@ -64,20 +64,11 @@
                     </a>
                 </li>
                 <li class="lower-nav-list-item">
-                    <a class="lower-nav-list-link" routerLink="/profile/{{userProfile}}/threads">
+                    <a class="lower-nav-list-link" routerLink="/profile/{{userProfile()}}/threads">
                         my threads
                     </a>
                 </li>
-                <li class="lower-nav-list-item">
-                    <a class="lower-nav-list-link" href="">
-                        my likes
-                    </a>
-                </li>
-                <li class="lower-nav-list-item">
-                    <a class="lower-nav-list-link" href="">
-                        saved
-                    </a>
-                </li>
+                
 
             </ul>
         </div>

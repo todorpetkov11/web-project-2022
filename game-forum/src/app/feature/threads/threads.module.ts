@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
     ThreadsListComponent,
@@ -24,7 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MyThreadsComponent,
     MyThreadsItemComponent,
     ThreadCommentsComponent,
-    ThreadCommentsItemComponent,
+    ThreadCommentsItemComponent
   ],
   imports: [
     CommonModule,

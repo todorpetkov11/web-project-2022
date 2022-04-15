@@ -12,14 +12,14 @@
             <h2 class="username">{{profile.username}}</h2>
 
             <label for="memberships">Threads</label>
-            <h3 class="memberships">{{profile.threads.length}}</h3>
+            <h3 class="memberships">{{threads.length}}</h3>
 
         </section>
 
     </section>
 
-    <section class="profile-actions">
-        <button class="profile-btn delete" >Delete</button>
+    <section class="profile-actions" *ngIf="profile.id == currentUser">
+        <button class="profile-btn delete" (click)="onDelete()">Delete</button>
         <button class="profile-btn" routerLink="/edit-profile">Edit</button>
     </section>
 

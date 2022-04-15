@@ -17,16 +17,19 @@
                 <option value="mmorpg">MMORPG</option>
                 <option value="shooter">Shooter</option>
                 <option value="strategy">Strategy</option>
-                <option value="battleroyale">Battle royale</option>
+                <option value="simulation">Simulation</option>
+                <option value="bataleroyale">Battle Royale</option>
+                <option value="adventure">Adventure</option>
+                <option value="cards">Cards</option>
+                <option value="roleplay">Roleplay</option>
             </select>
 
             <label class="label" for="fileUpload">Thread image</label>
 
             <input formControlName="image" type="file" class="file-input" #fileUpload (change)="onFileSelected($event)">
 
+            <p>{{ fileName }}</p>
             <div class="file-upload">
-
-                <p>{{fileName || "You haven't selected a file yet."}}</p>
 
                 <button class="form-btn" type="button" (click)="fileUpload.click()">
                     Upload
@@ -41,6 +44,6 @@
 
         </form>
 
-        <button class="form-btn" type="submit" form="thread-form" >Submit</button>
+        <button class="form-btn" type="submit" form="thread-form">Submit</button>
     </section>
 </main>

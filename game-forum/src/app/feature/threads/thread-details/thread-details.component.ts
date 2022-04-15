@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faShare } from '@fortawesome/free-solid-svg-icons';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
@@ -26,11 +26,17 @@ export class ThreadDetailsComponent implements OnInit {
   thread: IThread;
   likes: ILike[];
 
-  constructor(private threadService: ThreadService, private likeService: LikeService, private activatedRoute: ActivatedRoute, private userService: UserService) { }
+  constructor(private threadService: ThreadService,
+    private likeService: LikeService,
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService,
+    private router: Router) { }
+
+  threadId: string | null = this.activatedRoute.snapshot.paramMap.get('threadId')
+  currentUser: number = this.userService.currentUserId
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.paramMap.get('threadId')
-    this.threadService.getThreadById(id!).subscribe({
+    this.threadService.getThreadById(this.threadId!).subscribe({
       next: (thread) => {
         this.thread = thread
       },
@@ -38,7 +44,7 @@ export class ThreadDetailsComponent implements OnInit {
         console.log(error)
       }
     })
-    this.threadService.getThreadLikes(id!).subscribe({
+    this.threadService.getThreadLikes(this.threadId!).subscribe({
       next: (likes) => {
         this.likes = likes
 
@@ -101,4 +107,8 @@ export class ThreadDetailsComponent implements OnInit {
     this.saved = !this.saved
   }
 
+  public onDelete() {
+    this.threadService.deleteThread(this.threadId!).subscribe();
+    this.router.navigate(['/home'])
+  }
 }

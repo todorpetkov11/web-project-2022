@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutPageComponent } from './feature/pages/about-page/about-page.component';
 import { HomePageComponent } from './feature/pages/home-page/home-page.component';
 import { PageNotFoundComponent } from './feature/pages/page-not-found/page-not-found.component';
-import { NewThreadComponent } from './feature/threads/new-thread/new-thread.component';
 
 const routes: Routes = [
   {
@@ -16,6 +15,12 @@ const routes: Routes = [
     path: 'home',
     component: HomePageComponent,
     data: { animation: 'homePage' }
+  },
+
+  {
+    path: 'threads',
+    component: HomePageComponent,
+    data: { animation: 'threadsPage' }
   },
 
   {

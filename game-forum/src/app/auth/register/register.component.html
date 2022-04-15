@@ -43,6 +43,17 @@
                 <p>Passwords don't match</p>
             </div>
 
+            <label class="label" for="fileUpload">Profile picture</label>
+
+            <input formControlName="photoUrl" type="file" class="file-input" #fileUpload (change)="onFileSelected($event)">
+            <p>{{ fileName }}</p>
+            <div class="file-upload">
+
+                <button class="form-btn" type="button" (click)="fileUpload.click()">
+                    Upload
+                </button>
+            </div>
+
         </form>
 
         <button class="form-btn" type="submit" form="register-form" value="Submit">Submit</button>

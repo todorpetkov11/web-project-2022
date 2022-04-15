@@ -11,11 +11,15 @@ export class HeaderComponent {
 
   constructor(private userService: UserService, private router: Router) { }
 
-  userProfile: string = this.userService.currentUserId
+  userProfile() {
+    return this.userService.currentUserId
+  } 
 
   isLogged() {
     return this.userService.isLogged
   }
+
+  
 
   onLogout() {
     this.userService.logout()

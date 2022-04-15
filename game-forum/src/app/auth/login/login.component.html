@@ -1,35 +1,35 @@
 <main>
-<section class="main-form">
-    <div class="form-label">
-        <span>Login</span>
+    <section class="main-form">
+        <div class="form-label">
+            <span>Login</span>
 
-    </div>
-    <form [formGroup]="form" class="form-form" id="login-form" (submit)="onSubmit()">
+        </div>
+        <form [formGroup]="form" class="form-form" id="login-form" (submit)="onSubmit()">
 
-        <div class="error req-error" [ngClass]="{'error-visisble': errorMsg !== '',
+            <div class="error req-error" [ngClass]="{'error-visisble': errorMsg !== '',
          '': errorMsg === ''}">
-            <p>{{errorMsg}}</p>
-        </div>
+                <p>{{errorMsg}}</p>
+            </div>
 
-        <label class="label" for="email">Email</label>
-        <input formControlName="email" class="input" type="text" name="email">
+            <label class="label" for="email">Email</label>
+            <input formControlName="email" class="input" type="text" name="email">
 
-        <div class="error email-error" [ngClass]="{'error-visisble': form.controls['email'].touched && 
+            <div class="error email-error" [ngClass]="{'error-visisble': form.controls['email'].touched && 
         form.controls['email'].invalid}">
-            <p>This is not a valid email</p>
-        </div>
+                <p>This is not a valid email</p>
+            </div>
 
-        <label class="label" for="password">Password</label>
-        <input formControlName="password" class="input" type="password" name="password">
+            <label class="label" for="password">Password</label>
+            <input formControlName="password" class="input" type="password" name="password">
 
-        <div class="error password-error" [ngClass]="{'error-visisble': form.controls['password'].touched && 
+            <div class="error password-error" [ngClass]="{'error-visisble': form.controls['password'].touched && 
         form.controls['password'].invalid}">
-            <p>Invalid password</p>
-        </div>
+                <p>Invalid password</p>
+            </div>
 
-    </form>
+        </form>
 
-    <button class="form-btn" type="submit" form="login-form" value="Submit">Submit</button>
-    <p>Don't have an account? <a routerLink="/register">Register here!</a></p>
-</section>
+        <button class="form-btn" type="submit" form="login-form" value="Submit">Submit</button>
+        <p>Don't have an account? <a routerLink="/register">Register here!</a></p>
+    </section>
 </main>

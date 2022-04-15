@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IComment } from 'src/app/core/interfaces/comment';
+import { IUser } from 'src/app/core/interfaces/user';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-thread-comments-item',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThreadCommentsItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
+  @Input() comment: IComment;
+  commenter: IUser;
+  
   ngOnInit(): void {
+     this.userService.getProfile(this.comment.userId).subscribe({
+       next: (user) => {
+         this.commenter = user
+       }
+     })
   }
 
 }

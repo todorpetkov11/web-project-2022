@@ -1,24 +1,46 @@
-<main class="main-profile">
-    <div class="form-label">
-        <span>Edit Profile</span>
+<main>
+    <section class="main-form">
+        <div class="form-label">
+            <span>Edit Profile</span>
 
-    </div>
-    <section class="profile-info">
-        <img class="profile-pic" src="https://cdn.mos.cms.futurecdn.net/7pUbqBX8MnDfiUoh67iSX8.jpg"
-            alt="profile_picture">
+        </div>
+        <form [formGroup]="form" class="form-form" id="register-form" (submit)="onSubmit()">
 
-        <section class="profile-info-info">
-            
-            <button class="profile-btn edit" routerLink="/edit-profile">Change username</button>
-            <button class="profile-btn edit" routerLink="/edit-profile">Change profile picture</button>
-            <button class="profile-btn edit" routerLink="/edit-profile">Change email</button>
-            <button class="profile-btn edit" routerLink="/edit-profile">Change password</button>
-        </section>
+            <div class="error req-error" [ngClass]="{'error-visisble': errorMsg !== '',
+         '': errorMsg === ''}">
+                <p>{{errorMsg}}</p>
+            </div>
 
+            <label class="label" for="name">Username</label>
+            <input formControlName="username" class="input" type="text" name="name">
+
+            <div class="error username-error" [ngClass]="{'error-visisble': form.controls['username'].touched && 
+        form.controls['username'].invalid}">
+                <p>Invalid username! Be more creative!</p>
+            </div>
+
+            <label class="label" for="email">Email</label>
+            <input formControlName="email" class="input" type="email" name="email" value="{{}}">
+
+            <div class="error email-error" [ngClass]="{'error-visisble': form.controls['email'].touched && 
+        form.controls['email'].invalid}">
+                <p>This is not a valid email</p>
+            </div>
+
+            <label class="label" for="fileUpload">Profile picture</label>
+
+            <input formControlName="image" type="file" class="file-input" #fileUpload (change)="onFileSelected($event)">
+            <p>{{ fileName }}</p>
+            <div class="file-upload">
+
+                <button class="form-btn" type="button" (click)="fileUpload.click()">
+                    Upload
+                </button>
+            </div>
+
+        </form>
+
+        <button class="form-btn" type="submit" form="register-form" value="Submit">Submit</button>
+        <p>Already have an account? <a routerLink="/login">Login here!</a></p>
     </section>
-
-    <section class="profile-actions">
-        <button class="profile-btn delete" routerLink="/profile">Cancel</button>
-    </section>
-
 </main>

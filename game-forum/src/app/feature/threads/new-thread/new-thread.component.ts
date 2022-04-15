@@ -11,7 +11,7 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class NewThreadComponent {
 
-  fileName = '';
+  fileName: string = '"You haven\'t selected a file yet."';
   file: File;
 
   errorMsg: string = ''
@@ -46,12 +46,15 @@ export class NewThreadComponent {
     }
   }
 
-
   onSubmit() {
     const data = this.form.value
     data['authorId'] = Number(this.userService.currentUserId);
     data['authorName'] = this.userService.currentUserUsername
-    this.threadService.createThread(this.form.value).subscribe()
+    this.threadService.createThread(this.form.value).subscribe({
+      error: (err) => {
+        this.errorMsg = err
+      }
+    })
     this.router.navigate(['/home'])
   }
 }
