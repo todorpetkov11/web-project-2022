@@ -14,12 +14,12 @@
 .about-section{
     margin: 2rem 10rem 2rem 10rem;
     text-align: left;
-    background-color: #FFFFA1;
+    background-color: var(--light);
     padding: 4rem;
     border-radius: 2rem;
     font-size: 1.2rem;
-    border: 1px solid #00009A;
-    color: #00009A;
+    border: 1px solid var(--primary);
+    color: var(--dark);
 }
 
 .about-section-top p {

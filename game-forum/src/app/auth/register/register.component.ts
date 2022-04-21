@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
@@ -7,12 +7,22 @@ import { UserService } from 'src/app/core/services/user.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router, private cd: ChangeDetectorRef,) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private router: Router, private cd: ChangeDetectorRef) { }
 
-  fileName = "You haven\'t selected a file yet.";
+  fileName: string = "You haven\'t selected a file yet.";
   file: File;
+
+  errorMsg: string = ''
+
+  form: FormGroup = this.fb.group({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    username: new FormControl('', [Validators.required, Validators.maxLength(15)]),
+    password: new FormControl('', [Validators.required]),
+    rePassword: new FormControl('', [Validators.required]),
+    photoUrl: new FormControl('')
+  })
 
   onFileSelected(event: any) {
     const reader = new FileReader
@@ -29,23 +39,14 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  errorMsg: string = ''
-
-  form: FormGroup = this.fb.group({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    username: new FormControl('', [Validators.required, Validators.maxLength(15)]),
-    password: new FormControl('', [Validators.required]),
-    rePassword: new FormControl('', [Validators.required]),
-    photoUrl: new FormControl('')
-  })
-
-  ngOnInit(): void {
-  }
-
   onSubmit() {
     const data = this.form.value
-    this.userService.register(data).subscribe()
+    this.userService.register(data).subscribe({
+      error: (err) => {
+        this.errorMsg = err
+      }
+    })
     this.router.navigate(['/login'])
-   }
+  }
 
 }

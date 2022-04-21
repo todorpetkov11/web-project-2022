@@ -1,0 +1,86 @@
+.form-btn {
+    margin-top: 1rem;
+    padding: 0.8rem 0.6rem;
+    width: 25%;
+    color: var(--primary);
+    background-color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--primary);
+    transition: 0.2s ease-in-out;
+}
+
+.form-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+
+.profile-btn {
+    margin-top: 1rem;
+    padding: 0.8rem 0.6rem;
+    width: 10%;
+    color: var(--primary);
+    background-color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    border: 0.1rem solid var(--primary);
+    transition: 0.2s ease-in-out;
+}
+
+
+.profile-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+
+.profile-btn.delete:hover {
+    background-color: var(--red);
+    color: white;
+    cursor: pointer;
+    border-color: var(--red);
+}
+
+
+.icon {
+    margin: 0 1rem 0 1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s ease-in-out;
+    transform: rotate(0deg);
+    display: inline-block;
+    animation-name: unlike;
+    animation-duration: 0.2s;
+    opacity: 0.8;
+}
+
+@keyframes unlike {
+    0%   {transform: scale(0.5);}
+    25%  {transform: scale(0.7);}
+    50%  {transform: scale(0.9);}
+    100% {transform: scale(1);}
+}
+
+@keyframes like {
+    0%   {transform: scale(1.2);}
+    25%  {transform: scale(1.4);}
+    50%  {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+
+.liked {
+    color: var(--red);
+    transition: 0.3s ease-in-out;
+    animation-name: like;
+    animation-duration: 0.4s;
+}
+
+.saved {
+    color: var(--green);
+    transform: rotate(45deg);
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+}

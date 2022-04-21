@@ -1,5 +1,5 @@
 .footer {
-    background-color: #00009A;
+    background-color: var(--primary);
     color: white;
     padding: 1.5rem;
     border-top-right-radius: 2rem;
@@ -32,11 +32,11 @@
     font-family: sans-serif;
     padding: 0.5rem;
     border-radius: 1rem;
-    color: white;
+    color: var(--white);
     transition: 0.2s ease-in;
 }
 
 .contacts-list-item :hover{
-    color: #00009A;
-    background-color: #FFFF33;
+    color: var(--primary);
+    background-color: var(--white);
 }

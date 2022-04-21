@@ -7,7 +7,7 @@
 
 .header-main {
     position: relative;
-    background-color: #FFFF33;
+    background-color: var(--light);
     display: flex;
     padding: 2rem 3rem;
     align-content: space-between;
@@ -51,13 +51,13 @@
     display: table;
     font-size: 0.85rem;
     background-color: #FFFFEE ;
-    border: 0.1rem solid black;
+    border: 0.1rem solid var(--primary);
     text-align: center;
     width: 4rem;
     padding: 0.4rem 0.6rem;
     border-top-right-radius: 0.5rem;
     border-top-left-radius: 0.5rem;
-    box-shadow: black 4px 20px 10px;
+    box-shadow: var(--primary) 4px 20px 10px;
     transition: 0.2s ease-in-out;
     cursor: pointer;
 }
@@ -68,27 +68,27 @@
 }
 
 .middle-nav-list-item:hover {
-    background-color: #00009A;
-    color: white;
+    background-color: var(--primary);
+    color: var(--white);
 }
 
 .middle-nav-list-item.logout:hover {
-    background-color: red;
-    color: white;
-    border-color: red;
+    background-color: var(--red);
+    color: var(--white);
+    border-color: var(--red);
 }
 
 
 .middle-nav-list-item:hover a {
-    color: white;  
+    color: var(--white);  
 }
 
 .is-active {
-    background-color: #00009A;
+    background-color: var(--primary);
 }
 
 .is-active a{
-    color: white;
+    color: var(--white);
 }
 
 .middle-nav-list-item-link {
@@ -97,14 +97,14 @@
     cursor: pointer;
     font-family: sans-serif;
     text-decoration: none;
-    color: black;
+    color: var(--primary);
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.04rem;
 }
 
 .lower-nav {
-    background-color: #00009A;
+    background-color: var(--primary);
     padding: 1rem;
     position: relative;
 }
@@ -122,7 +122,7 @@
 
 .lower-nav-list-item {
     padding: 1rem;
-    background-color: #00009A;
+    background-color: var(--primary);
     text-transform: lowercase;
     
 }
@@ -140,8 +140,8 @@
     vertical-align: middle;
     display: table-cell;
     text-decoration: none;
-    color: white;
-    border-right: 1px solid white;
+    color: var(--white);
+    border-right: 1px solid var(--white);
     padding: 0 2.1rem;
 }
 

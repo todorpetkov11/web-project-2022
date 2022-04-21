@@ -6,7 +6,7 @@
 
 .main-main {
     margin: 0.4rem 0 0 10rem;
-    border: 1px solid #99CCFF;
+    border: 1px solid var(--dark);
     border-radius: 1.2rem 1.2rem 0 0;
     display: flex;
     flex-direction: column;
@@ -39,7 +39,7 @@
 .title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #00009A;
+    color: var(--dark);
     width: 50%;
 }
 
@@ -59,7 +59,7 @@
 
 .main-details .details-img {
     max-width: 50%;
-    background: white;
+    background: var(--light);
     margin: 2rem 0 2rem 0;
     border-radius: 2rem;
 }
@@ -75,7 +75,7 @@
     font-size: 1.5rem;
     margin: 1rem 0 1rem 0;
     border-radius: 1rem;
-    border-bottom: 1px solid #00009A;
+    border-bottom: 1px solid var(--dark);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
@@ -87,45 +87,7 @@
     opacity: 0.8;
 }
 
-.icon {
-    margin: 0 1rem 0 1rem;
-    cursor: pointer;
-    user-select: none;
-    transition: 0.3s ease-in-out;
-    transform: rotate(0deg);
-    display: inline-block;
-    animation-name: unlike;
-    animation-duration: 0.2s;
-    opacity: 0.8;
-}
 
-@keyframes unlike {
-    0%   {transform: scale(0.5);}
-    25%  {transform: scale(0.7);}
-    50%  {transform: scale(0.9);}
-    100% {transform: scale(1);}
-}
-
-@keyframes like {
-    0%   {transform: scale(1.2);}
-    25%  {transform: scale(1.4);}
-    50%  {transform: scale(1.2);}
-    100% {transform: scale(1);}
-}
-
-.liked {
-    color: red;
-    transition: 0.3s ease-in-out;
-    animation-name: like;
-    animation-duration: 0.4s;
-}
-
-.saved {
-    color: green;
-    transform: rotate(45deg);
-    display: inline-block;
-    transition: 0.3s ease-in-out;
-}
 
 .content{
     font-size: 1.2rem;
@@ -141,29 +103,3 @@
     margin: 2rem 0 2rem 0;
 }
 
-.profile-btn {
-    margin-top: 1rem;
-    padding: 0.8rem 0.6rem;
-    width: 10%;
-    color: #00009A;
-    background-color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 0.5rem;
-    border: 0.1rem solid #00009A;
-    transition: 0.2s ease-in-out;
-}
-
-
-.profile-btn:hover {
-    background-color: #00009A;
-    color: white;
-    cursor: pointer;
-}
-
-.profile-btn.delete:hover {
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    border-color: red;
-}

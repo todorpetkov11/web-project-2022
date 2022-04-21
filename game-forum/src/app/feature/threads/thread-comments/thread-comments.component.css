@@ -1,6 +1,6 @@
 .main-comments {
     padding: 5rem;
-    border-top: 1px solid black;
+    border-top: 1px solid var(--dark);
     border-radius: 1rem;
     margin: 2.5rem;
 }
@@ -20,24 +20,6 @@
     text-align: center;
 }
 
-.profile-btn {
-    margin-top: 1rem;
-    padding: 0.8rem 0.6rem;
-    width: 10%;
-    color: #00009A;
-    background-color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 0.5rem;
-    border: 0.1rem solid #00009A;
-    transition: 0.2s ease-in-out;
-}
-
-.profile-btn:hover {
-    background-color: #00009A;
-    color: white;
-    cursor: pointer;
-}
 
 .loginToComment {
     font-size: 2rem;

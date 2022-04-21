@@ -19,18 +19,24 @@ export class UserService {
     return false
   }
 
+  get currentUser() {
+    const user = localStorage.getItem('user')
+    if (user) {
+      return JSON.parse(user)
+    }
+  }
 
   get currentUserPfp() {
     const user = localStorage.getItem('user')
     if (user) {
-      return JSON.parse(user!).photoUrl
+      return JSON.parse(user).photoUrl
     }
   }
 
   get currentUserId() {
     const user = localStorage.getItem('user')
     if (user) {
-      return JSON.parse(user!).id
+      return JSON.parse(user).id
     }
 
   }
@@ -65,13 +71,11 @@ export class UserService {
     return this.http.get<IUser>(`${apiUrl}/users/${userId}`)
   }
 
-  editProfile(userId: string, editData: { username: string, }): Observable<IUser> {
+  editProfile(userId: string, editData: { username: string, photoUrl: string }): Observable<IUser> {
     return this.http.put<IUser>(`${apiUrl}/users/${userId}`, editData)
   }
 
   deleteUser(): Observable<IUser> {
-
-
     return this.http.delete<IUser>(`${apiUrl}/users/${this.currentUserId}`)
   }
 }

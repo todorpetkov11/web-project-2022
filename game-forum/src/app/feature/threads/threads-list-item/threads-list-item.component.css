@@ -1,6 +1,6 @@
 .main-main {
     margin: 0.4rem 0 0 10rem;
-    border: 1px solid #99CCFF;
+    border: 1px solid var(--light);
     border-radius: 1.2rem 1.2rem 0 0;
     display: grid;
     grid-template-rows: auto;
@@ -13,8 +13,8 @@
     padding: 1.5rem;
     cursor: pointer;
     margin: 1rem;
-    color: #00009A;
-    border: 1px solid white;
+    color: var(--dark);
+    border: 1px solid var(--light);
     transition: 0.3s ease-out;
     display: flex;
     flex-direction: column;
@@ -74,6 +74,6 @@
 }
 
 .main-card:hover {
-    border-color: #00009A;
+    border-color: var(--dark);
     border-radius: 2.5rem;  
 }

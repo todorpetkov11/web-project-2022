@@ -17,7 +17,7 @@ export class NewThreadComponent {
   errorMsg: string = ''
 
   form: FormGroup = this.fb.group({
-    title: new FormControl('', [Validators.required, Validators.email]),
+    title: new FormControl('', [Validators.required]),
     game: new FormControl('', [Validators.required]),
     genre: new FormControl('', [Validators.required]),
     photoUrl: new FormControl(''),

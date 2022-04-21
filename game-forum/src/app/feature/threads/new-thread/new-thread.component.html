@@ -9,8 +9,18 @@
             <label class="label" for="title">Thread name</label>
             <textarea formControlName="title" class="textarea" name="title" id="" cols="1" rows="1"></textarea>
 
+            <div class="error email-error" [ngClass]="{'error-visisble': form.controls['title'].touched && 
+        form.controls['title'].invalid}">
+                <p>Invalid thread name.</p>
+            </div>
+
             <label class="label" for="game">Game</label>
             <textarea formControlName="game" class="textarea" name="game" id="" cols="1" rows="1"></textarea>
+
+            <div class="error email-error" [ngClass]="{'error-visisble': form.controls['game'].touched && 
+        form.controls['game'].invalid}">
+                <p>Invalid game name.</p>
+            </div>
 
             <label class="label" for="genre">Game genre</label>
             <select formControlName="genre" class="select" name="genre">
@@ -22,6 +32,7 @@
                 <option value="adventure">Adventure</option>
                 <option value="cards">Cards</option>
                 <option value="roleplay">Roleplay</option>
+                <option value="sports">Sports</option>
             </select>
 
             <label class="label" for="fileUpload">Thread image</label>
@@ -39,8 +50,18 @@
             <label class="label" for="description">Description</label>
             <textarea formControlName="description" class="textarea" name="description" cols="1" rows="2"></textarea>
 
+            <div class="error email-error" [ngClass]="{'error-visisble': form.controls['description'].touched && 
+        form.controls['description'].invalid}">
+                <p>Description is empty</p>
+            </div>
+
             <label class="label" for="content">Content</label>
             <textarea formControlName="content" class="textarea" name="content" id="" cols="30" rows="10"></textarea>
+
+            <div class="error email-error" [ngClass]="{'error-visisble': form.controls['content'].touched && 
+        form.controls['content'].invalid}">
+                <p>Content is empty</p>
+            </div>
 
         </form>
 

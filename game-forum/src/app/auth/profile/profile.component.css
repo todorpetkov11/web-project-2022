@@ -2,13 +2,13 @@
     position: relative;
     margin: 12rem 30rem 5rem 30rem;
     padding: 3rem;
-    border: 1px solid #00009A;
+    border: 1px solid var(--primary);
     border-radius: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #00009A;
-    background-color: #FFFFA1;
+    color: var(--primary);
+    background-color: var(--light);
     max-width: 100%;
     text-align: center;
     height: 100vh;
@@ -20,7 +20,7 @@
     width: 10rem;
     border-radius: 50%;
     margin-bottom: 2rem;
-    border: 1px solid #00009A;
+    border: 1px solid var(--primary);
     padding: 0.5rem;
 }
 
@@ -40,32 +40,5 @@ h2 {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-}
-
-.profile-btn {
-    margin-top: 1rem;
-    padding: 0.8rem 0.6rem;
-    width: 25%;
-    color: #00009A;
-    background-color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 0.5rem;
-    border: 0.1rem solid #00009A;
-    transition: 0.2s ease-in-out;
-}
-
-
-.profile-btn:hover {
-    background-color: #00009A;
-    color: white;
-    cursor: pointer;
-}
-
-.profile-btn.delete:hover {
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    border-color: red;
 }
 

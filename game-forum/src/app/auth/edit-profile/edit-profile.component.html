@@ -4,7 +4,7 @@
             <span>Edit Profile</span>
 
         </div>
-        <form [formGroup]="form" class="form-form" id="register-form" (submit)="onSubmit()">
+        <form [formGroup]="form" class="form-form" id="edit-profile-form" (submit)="onSubmit()">
 
             <div class="error req-error" [ngClass]="{'error-visisble': errorMsg !== '',
          '': errorMsg === ''}">
@@ -18,18 +18,10 @@
         form.controls['username'].invalid}">
                 <p>Invalid username! Be more creative!</p>
             </div>
-
-            <label class="label" for="email">Email</label>
-            <input formControlName="email" class="input" type="email" name="email" value="{{}}">
-
-            <div class="error email-error" [ngClass]="{'error-visisble': form.controls['email'].touched && 
-        form.controls['email'].invalid}">
-                <p>This is not a valid email</p>
-            </div>
-
             <label class="label" for="fileUpload">Profile picture</label>
 
-            <input formControlName="image" type="file" class="file-input" #fileUpload (change)="onFileSelected($event)">
+            <input formControlName="photoUrl" type="file" class="file-input" #fileUpload
+                (change)="onFileSelected($event)">
             <p>{{ fileName }}</p>
             <div class="file-upload">
 
@@ -40,7 +32,10 @@
 
         </form>
 
-        <button class="form-btn" type="submit" form="register-form" value="Submit">Submit</button>
-        <p>Already have an account? <a routerLink="/login">Login here!</a></p>
+        <div class="profile-actions ">
+            <button class="form-btn" type="submit" form="edit-profile-form" value="Submit">Submit</button>
+            <button class="form-btn delete" type="button" value="Submit">Cancel</button>
+        </div>
+
     </section>
 </main>

@@ -15,6 +15,7 @@ export class EditProfileComponent implements OnInit {
 
   fileName = "You haven\'t selected a file yet.";
   file: File;
+  currentUser: IUser  = this.userService.currentUser
 
   onFileSelected(event: any) {
     const reader = new FileReader
@@ -34,22 +35,22 @@ export class EditProfileComponent implements OnInit {
   errorMsg: string = ''
 
   form: FormGroup = this.fb.group({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    username: new FormControl('', [Validators.required, Validators.maxLength(15)]),
-    password: new FormControl('', [Validators.required]),
-    rePassword: new FormControl('', [Validators.required]),
-    photoUrl: new FormControl('')
+    username: new FormControl(`${this.currentUser.username}`, [Validators.required, Validators.maxLength(15)]),
+    photoUrl: new FormControl(``)
   })
-
-  currentUser: IUser | null = this.userService.currentUser
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    const data = this.form.value
+    // const data = this.form.value
+    // if (data['photoUrl'] === ''){
+    //   data['photoUrl'] = this.currentUser.photoUrl
+    // }
+    const data = this.currentUser
+    console.log(data)
     this.userService.editProfile(this.currentUser.id, data).subscribe()
-    this.router.navigate(['/login'])
+    this.router.navigate([`/profile/${this.currentUser.id}`])
    }
 
 }

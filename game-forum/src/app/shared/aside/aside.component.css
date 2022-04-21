@@ -1,5 +1,5 @@
 .aside {
-    background-color: #99CCFF;
+    background-color: var(--light);
     padding: 1rem;
 }
 
@@ -15,22 +15,22 @@
 }
 
 .search button {
-    border-left: ivory 1px solid;
-    border-top: 1px white solid;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
+    border-left: var(--light) 1px solid;
+    border-top: 1px var(--light) solid;
+    border-right: 1px solid var(--dark);
+    border-bottom: 1px solid var(--dark);
     border-radius: 50%;
     padding: 0.2rem;
-    background-color: #00009A;
-    color: white;
+    background-color: var(--primary);
+    color: var(--light);
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
 
 .search button:hover {
-    background-color: white;
-    color: #00009A;
-    border: 1px solid #00009A;
+    background-color: var(--light);
+    color: var(--primary);
+    border: 1px solid var(--primary);
 }
 
 .aside-list-title {
@@ -49,8 +49,8 @@
 }
 
 .list-item:hover {
-    background-color: #00009A;
-    color: white;
+    background-color: var(--primary);
+    color: var(--light);
 }
 
 .aside-list-lists {
