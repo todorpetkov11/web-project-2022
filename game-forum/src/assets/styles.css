@@ -5,16 +5,26 @@
 
 
 :root {
-    --primary:#8F3985;
-    --dark: #25283D;
-    --light: #CEA2AC;
-    --white: white;
+    --primary:#8661C1;
+    --dark: #181528;
+    --light: #565E76;
+    --white: #F2F4F3;
     --red: #F2020A;
-    --green: #BBCF3A;
+    --green: green;
 
 }
 
 body {
-    overflow-x:hidden;  
+    overflow-x:hidden;
+    background-color: var(--dark);  
+}
+
+input::selection {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+input:focus {
+    outline: none;
 }
 

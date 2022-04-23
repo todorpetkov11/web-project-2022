@@ -12,7 +12,9 @@
             </div>
 
             <label class="label" for="email">Email</label>
-            <input formControlName="email" class="input" type="text" name="email">
+            <input formControlName="email" class="input" type="text" name="email" [ngClass]="{'invalid': form.controls['email'].touched && 
+        form.controls['email'].invalid, 'valid':  
+        form.controls['email'].valid}">
 
             <div class="error email-error" [ngClass]="{'error-visisble': form.controls['email'].touched && 
         form.controls['email'].invalid}">
@@ -20,7 +22,10 @@
             </div>
 
             <label class="label" for="password">Password</label>
-            <input formControlName="password" class="input" type="password" name="password">
+            <input formControlName="password" class="input" type="password" name="password"
+            [ngClass]="{'invalid': form.controls['password'].touched && 
+        form.controls['password'].invalid, 'valid':  
+        form.controls['password'].valid}">
 
             <div class="error password-error" [ngClass]="{'error-visisble': form.controls['password'].touched && 
         form.controls['password'].invalid}">
