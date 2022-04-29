@@ -5,18 +5,20 @@
 
 
 :root {
-    --primary:#8661C1;
-    --dark: #181528;
-    --light: #565E76;
-    --white: #F2F4F3;
+    --primary: #A21314;
+    --dark: #080808;
+    --light: #212121;
+    --white: white;
+    --active: #dfc800;
     --red: #F2020A;
     --green: green;
 
 }
 
 body {
-    overflow-x:hidden;
-    background-color: var(--dark);  
+    overflow-x: hidden;
+    background: rgb(162, 19, 20);
+    background: linear-gradient(90deg, rgba(162, 19, 20, 1) 0%, rgba(33, 33, 33, 1) 58%, rgba(8, 8, 8, 1) 100%);
 }
 
 input::selection {
@@ -27,4 +29,3 @@ input::selection {
 input:focus {
     outline: none;
 }
-

@@ -3,7 +3,6 @@
     padding: 1.5rem;
     cursor: pointer;
     color: var(--white);
-    border: 1px solid var(--light);
     transition: 0.3s ease-out;
     height: 10rem;
 }
@@ -18,18 +17,19 @@
    width: 100%;
    display: flex;
    justify-content: space-between;
+   margin-bottom: 1rem;
 }
 
 .title {
     font-size: 1.2rem;
-    width: 50%;
+    width: 75%;
 }
 
 
 .game {
     opacity: 0.5;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 
 .main-card .main-card-explain {
@@ -37,19 +37,17 @@
     width: 50%;
     font-size: 1rem;
     text-align: center;
-    
 }
 
 .card-wrap {
     display: flex;
     flex-direction: row;
     align-items: center;
-    max-height: 50%;
 }
 
 .main-card .card-img {
     height: 8rem;
-    max-width: 50%;
+    width: 15rem;
     border-radius: 2rem;
 }
 
@@ -63,7 +61,7 @@
 
 .main-card:hover {
     border-color: var(--white);
-    border-radius: 2rem;
-    background-color: var(--dark);
-    color: var(--white);
+    background-color: var(--active);
+    color: var(--dark);
+    transform: scale(1.05);
 }

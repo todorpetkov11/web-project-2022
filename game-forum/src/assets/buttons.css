@@ -11,7 +11,7 @@
 }
 
 .form-btn:hover {
-    background-color: var(--primary);
+    background-color: var(--active);
     color: var(--white);
     cursor: pointer;
 }
@@ -31,7 +31,7 @@
 
 
 .profile-btn:hover {
-    background-color: var(--primary);
+    background-color: var(--active);
     color: white;
     cursor: pointer;
 }

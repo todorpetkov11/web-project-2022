@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: row;
     margin: 9rem 10rem 5rem 0;
+    color: var(--white);
 }
 
 .main-main {
     margin: 0.4rem 0 0 10rem;
-    border: 1px solid var(--dark);
-    border-radius: 1.2rem 1.2rem 0 0;
+    background-color: var(--light);
     display: flex;
     flex-direction: column;
     width: calc(75%) - 10rem;
@@ -39,7 +39,6 @@
 .title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--dark);
     width: 50%;
 }
 
@@ -74,8 +73,7 @@
 .details-bot-wrap {
     font-size: 1.5rem;
     margin: 1rem 0 1rem 0;
-    border-radius: 1rem;
-    border-bottom: 1px solid var(--dark);
+    border-bottom: 1px solid var(--white);
     padding: 1rem;
     display: flex;
     justify-content: space-between;

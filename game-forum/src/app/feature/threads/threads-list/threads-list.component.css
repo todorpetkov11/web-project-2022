@@ -5,8 +5,7 @@
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
-    gap: 2rem;
-    background-color: var(--light);    
+    gap: 2rem;    
 }
 
 
