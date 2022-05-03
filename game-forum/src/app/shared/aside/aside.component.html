@@ -2,48 +2,45 @@
     <aside class="aside-aside">
         <section class="search">
             <p>quickserach</p>
-            <input type="text">
-            <button type="button">go</button>
+            <form [formGroup]="form" (submit)="onSearch()" id="comment-form">
+                <input formControlName="content" type="text">
+                <button type="submit" form="comment-form">go</button>
+            </form>
         </section>
         <section class="aside-list">
             <p class="aside-list-title">genre</p>
             <div class="aside-list-lists">
                 <ul class="aside-list-list">
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']"
-                            [queryParams]="{searchBy: 'genre', genre: 'roleplay'}">Roleplay</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'roleplay'}" class="list-item">
+                        <a>Roleplay</a>
                     </li>
 
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'genre', genre: 'cards'}">Cards</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'cards'}" class="list-item">
+                        <a>Cards</a>
                     </li>
 
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']"
-                            [queryParams]="{searchBy: 'genre', genre: 'simulation'}">Simulation</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'simulation'}" class="list-item">
+                        <a>Simulation</a>
                     </li>
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'genre', genre: 'moba'}">MOBA</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'moba'}" class="list-item">
+                        <a>MOBA</a>
                     </li>
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']"
-                            [queryParams]="{searchBy: 'genre', genre: 'adventure'}">Adventure</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'adventure'}" class="list-item">
+                        <a>Adventure</a>
                     </li>
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'genre', genre: 'mmorpg'}">MMORPG</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{genre: 'mmorpg'}" class="list-item">
+                        <a>MMORPG</a>
                     </li>
 
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']"
-                            [queryParams]="{searchBy: 'genre', genre: 'strategy'}">Strategy</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'strategy'}" class="list-item">
+                        <a>Strategy</a>
                     </li>
 
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'genre', genre: 'battleroyale'}">Battle
-                            royale</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'battleroyale'}" class="list-item">
+                        <a>Battle royale</a>
                     </li>
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'genre', genre: 'sports'}">Sports</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'sports'}" class="list-item">
+                        <a>Sports</a>
                     </li>
                 </ul>
             </div>
@@ -52,45 +49,43 @@
             <p class="aside-list-title">popular now</p>
             <div class="aside-list-lists">
                 <ul class="aside-list-list">
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']"
-                            [queryParams]="{searchBy: 'game', game: 'League of Legends'}">League of Legends</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{game: 'League of Legends'}" class="list-item">
+                        <a>League of Legends</a>
                     </li>
 
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'game', game: 'Elden Ring'}">Elden
+                    <li [routerLink]="['/threads']" [queryParams]="{game: 'Elden Ring'}" class="list-item">
+                        <a>Elden
                             Ring</a>
                     </li>
 
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']"
-                            [queryParams]="{searchBy: 'game', game: 'World of Warcraft: Classic'}">World of Warcraft:
+                    <li [routerLink]="['/threads']" [queryParams]="{game: 'World of Warcraft: Classic'}"
+                        class="list-item">
+                        <a>World of Warcraft:
                             Classic</a>
                     </li>
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'game', game: 'Apex Legends'}">Apex
+                    <li [routerLink]="['/threads']" [queryParams]="{game: 'Apex Legends'}" class="list-item">
+                        <a>Apex
                             Legends</a>
                     </li>
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']"
-                            [queryParams]="{searchBy: 'game', game: 'Overwatch'}">Overwatch</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{game: 'Overwatch'}" class="list-item">
+                        <a>Overwatch</a>
                     </li>
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'game', game: 'Dota 2'}">Dota 2</a>
-                    </li>
-
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'game', game: 'Valoran'}">Valorant</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{game: 'Dota 2'}" class="list-item">
+                        <a>Dota 2</a>
                     </li>
 
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'game', game: 'GTA V'}">GTA V</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{game: 'Valoran'}" class="list-item">
+                        <a>Valorant</a>
                     </li>
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'game', game: 'CS:GO'}">CS:GO</a>
+
+                    <li [routerLink]="['/threads']" [queryParams]="{game: 'GTA V'}" class="list-item">
+                        <a>GTA V</a>
                     </li>
-                    <li class="list-item">
-                        <a [routerLink]="['/threads']" [queryParams]="{searchBy: 'game', game: 'FIFA 22'}">FIFA 22</a>
+                    <li [routerLink]="['/threads']" [queryParams]="{game: 'CS:GO'}" class="list-item">
+                        <a>CS:GO</a>
+                    </li>
+                    <li [routerLink]="['/threads']" [queryParams]="{game: 'FIFA 22'}" class="list-item">
+                        <a>FIFA 22</a>
                     </li>
                 </ul>
             </div>

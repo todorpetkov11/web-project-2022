@@ -1,12 +1,12 @@
 <section class="main-comments">
     <div *ngIf="isLogged()">
         <section class="comment">
-            <img class="userPfp" src="{{currentUserPfp}}" alt="">
             <form [formGroup]="form" class="comment-form" id="comment-form" (submit)="onPost()">
-                <input formControlName="content" class="textarea comment-input" name="game" id="" cols="1" rows="5"
-                    placeholder="Your comment...">
+                <img class="userPfp" src="{{currentUserPfp}}" alt="">
+                <input formControlName="content" class="input comment" name="game" id="" cols="1" rows="5"
+                    placeholder="Your comment..." (focus)="onFormFocus()" >
             </form>
-            <button class="profile-btn" form="comment-form" type="submit">Post</button>
+            <button [ngClass]="{'visible': formSelected}" class="form-btn" form="comment-form" type="submit">Post</button>
         </section>
     </div>
     <div *ngIf="!isLogged()">
@@ -16,5 +16,5 @@
         <h1 class="no-comments">No comments yet! Be the first one!</h1>
     </div>
     <app-thread-comments-item *ngFor="let comment of comments" [comment]="comment"></app-thread-comments-item>
-    
+
 </section>

@@ -3,6 +3,7 @@
     padding: 1rem;
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
+    width: 100%;
 }
 
 .search p {

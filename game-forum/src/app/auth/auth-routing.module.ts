@@ -22,7 +22,6 @@ const routes: Routes = [
     {
         path: 'profile/:profileId/threads',
         component: MyThreadsComponent,
-        
         data: { animation: 'myThreadsPage' }
     },
 

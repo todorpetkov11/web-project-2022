@@ -2,7 +2,7 @@
     <div class="main-main">
         <section class="profile-actions" *ngIf="thread.authorId == currentUser!">
             <button class="profile-btn delete" (click)="onDelete()" >Delete</button>
-            <!-- <button class="profile-btn" routerLink="/edit-profile">Edit</button> -->
+            <button class="profile-btn" routerLink="/edit-profile">Edit</button>
         </section>
         <section class="main-details">
             
@@ -26,8 +26,8 @@
                         [icon]="faHeart"></fa-icon>
                     <fa-icon [ngClass]="{'saved': saved, '': !saved}" (click)="onSaveClick()" class="icon"
                         [icon]="faPlus"></fa-icon>
-                    <!-- <fa-icon class="icon" [icon]="faShare"></fa-icon>
-                    <fa-icon class="icon" [icon]="faReport"></fa-icon> -->
+                    <fa-icon class="icon" [icon]="faShare"></fa-icon>
+                    <fa-icon class="icon" [icon]="faReport"></fa-icon>
                 </div>
             </div>
 
@@ -40,10 +40,7 @@
                 3.3.5 comes with Icecrown Citadel instance both heroic and normal, for 10 and 25 people respectively.
                 Blizzard have rolled out the latest patch for the game last night.
                 3.3.5 comes with Icecrown Citadel instance both heroic and normal, for 10 and 25 people respectively.
-
             </p>
-
-            
         </section>
 
         <app-thread-comments></app-thread-comments>

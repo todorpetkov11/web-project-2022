@@ -33,6 +33,7 @@
     word-spacing: 0.5rem;
     letter-spacing: 0.3rem;
     font-family: sans-serif;
+    color: var(--white);
 }
 
 .middle-nav {

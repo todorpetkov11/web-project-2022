@@ -5,7 +5,8 @@
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
-    gap: 2rem;    
+    gap: 2rem;
+    width: 70%;    
 }
 
 

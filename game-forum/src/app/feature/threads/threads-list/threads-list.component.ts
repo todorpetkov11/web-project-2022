@@ -15,37 +15,33 @@ export class ThreadsListComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer, private threadService: ThreadService, private activatedRoute: ActivatedRoute) { }
 
   threads: IThread[];
-  searchBy: string;
-  param: string;
+
 
   ngOnInit(): void {
     this.activatedRoute.queryParams
-      .subscribe(params => {
-        console.log(params)
-        this.searchBy = params['searchBy'];
-        this.param = params[this.searchBy]
-      }
-    );
-
-    if (!this.searchBy) {
-      console.log(this.searchBy)
-      this.threadService.getAllThreads().subscribe({
-        next: (threads) => {
-          this.threads = threads
-          this.threads.forEach(thread => {
-            thread.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl(thread.photoUrl)
+      .subscribe(query => {
+        if (!query) {
+          this.threadService.getAllThreads().subscribe({
+            next: (threads) => {
+              this.threads = threads
+              this.threads.forEach(thread => {
+                thread.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl(thread.photoUrl)
+              })
+            }
           })
         }
-      })
-    }
-    else {
-      this.threadService.getThreadsWithParams(this.searchBy, this.param).subscribe({
-        next: (threads) => {
-          this.threads = threads
+        else {
+          let param = Object.entries(query).flat()
+          this.threadService.getThreadsWithParams(param[0], param[1]).subscribe({
+            next: (threads) => {
+              this.threads = threads
+              this.threads.forEach(thread => {
+                thread.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl(thread.photoUrl)
+              })
+            }
+          })
         }
-      })
-    }
-
+      }
+      );
   }
-
-}
+};

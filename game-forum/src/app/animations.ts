@@ -6,7 +6,7 @@ export const slideInAnimation = trigger('routeAnimations', [
       position: 'relative',
       height: '100vh',
     }),
-    query(':enter, :leave', [
+    query(':enter, :leave',  [
       style({
         position: 'absolute',
         top: 0,

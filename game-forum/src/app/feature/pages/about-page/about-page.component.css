@@ -9,6 +9,7 @@
     font-family: sans-serif;
     letter-spacing: 2px;
     text-align: center;
+    color: var(--white);
 }
 
 .about-section{
@@ -16,10 +17,8 @@
     text-align: left;
     background-color: var(--light);
     padding: 4rem;
-    border-radius: 2rem;
     font-size: 1.2rem;
-    border: 1px solid var(--primary);
-    color: var(--dark);
+    color: var(--white);
 }
 
 .about-section-top p {

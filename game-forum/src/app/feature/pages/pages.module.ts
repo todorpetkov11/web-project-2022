@@ -20,7 +20,7 @@ import { ThreadsModule } from '../threads/threads.module';
     CommonModule,
     RouterModule,
     ThreadsModule,
-    SharedModule,
+    SharedModule
   ]
 })
 export class PagesModule { }

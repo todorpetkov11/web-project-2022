@@ -20,12 +20,11 @@
     margin-top: 1rem;
     padding: 0.8rem 0.6rem;
     width: 10%;
-    color: var(--primary);
-    background-color: white;
+    background-color: var(--white);
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 0.5rem;
-    border: 0.1rem solid var(--primary);
+    border: none;
     transition: 0.2s ease-in-out;
 }
 

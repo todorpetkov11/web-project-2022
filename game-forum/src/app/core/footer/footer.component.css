@@ -37,6 +37,6 @@
 }
 
 .contacts-list-item :hover{
-    color: var(--primary);
-    background-color: var(--white);
+    color: var(--dark);
+    background-color: var(--active);
 }

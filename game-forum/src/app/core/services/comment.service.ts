@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { IComment } from '../interfaces/comment';
 
 
@@ -19,5 +19,6 @@ export class CommentService {
 
   retrieveComments(threadId: string): Observable<IComment[]> {
     return this.http.get<IComment[]>(`${apiUrl}/comments/?threadId=${threadId}`)
+    
   }
 }

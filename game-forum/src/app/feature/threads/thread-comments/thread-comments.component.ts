@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { IComment } from 'src/app/core/interfaces/comment';
 import { CommentService } from 'src/app/core/services/comment.service';
@@ -21,10 +21,11 @@ export class ThreadCommentsComponent implements OnInit {
   currentUser: string = this.userService.currentUserId
   threadId: string | null = this.activatedRoute.snapshot.paramMap.get('threadId')
   comments: IComment[];
-  currentUserPfp: string = this.userService.currentUserPfp
+  currentUserPfp: string = this.userService.currentUserPfp;
+  formSelected: boolean = false;
 
   form: FormGroup = this.fb.group({
-    content: new FormControl('')
+    content: new FormControl('', [Validators.required])
   })
 
   isLogged() {
@@ -34,16 +35,20 @@ export class ThreadCommentsComponent implements OnInit {
   ngOnInit(): void {
     this.commentService.retrieveComments(this.threadId!).subscribe({
       next: (comments) => {
+        console.log(comments)
         this.comments = comments
-        console.log(this.comments)
       }
     })
   }
 
+  onFormFocus() {
+    this.formSelected = true;
+  }
+
   onPost() {
     const data = this.form.value
-    
-    data['userId'] = Number(this.userService.currentUserId);
+
+    data['userId'] = Number(this.currentUser);
     data['threadId'] = Number(this.threadId);
     this.commentService.postComment(data).subscribe({
       next: (comment) => {

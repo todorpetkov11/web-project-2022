@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomePageComponent,
-    data: { animation: 'homePage' }
+    data: { animation: 'homePage' },
   },
 
   {
@@ -41,3 +41,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

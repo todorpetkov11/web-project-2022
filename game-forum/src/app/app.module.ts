@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PagesModule } from './feature/pages/pages.module';
 import { ThreadsModule } from './feature/threads/threads.module';
 import { HttpClientModule } from '@angular/common/http'
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http'
     BrowserAnimationsModule,
     HttpClientModule,
     AuthModule,
+    SharedModule,
     ThreadsModule,
     CoreModule,
     PagesModule,
