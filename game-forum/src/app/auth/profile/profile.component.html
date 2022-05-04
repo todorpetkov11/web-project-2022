@@ -1,26 +1,55 @@
-<main class="main-profile">
-    <div class="form-label">
-        <span>My Profile</span>
+<main class="main">
+    <!-- <section class="aside">
+        <aside class="aside-aside">
 
-    </div>
-    <section class="profile-info">
-        <img class="profile-pic" src="{{profile.photoUrl}}"
-            alt="profile_picture">
+            <section class="aside-list">
+                <p class="aside-list-title">profile actions</p>
+                <div class="aside-list-lists">
+                    <ul class="aside-list-list">
+                        <li [routerLink]="['/edit-profile']" [queryParams]="{ genre: 'roleplay'}" class="list-item">
+                            <a>Profile</a>
+                        </li>
 
-        <section class="profile-info-info">
-            <label for="username">Username</label>
-            <h2 class="username">{{profile.username}}</h2>
+                        <li [routerLink]="['/profile/']" [queryParams]="{ genre: 'cards'}" class="list-item">
+                            <a>Threads</a>
+                        </li>
 
-            <label for="memberships">Threads</label>
-            <h3 class="memberships">{{threads.length}}</h3>
+                        <li [routerLink]="['/threads']" [queryParams]="{ genre: 'simulation'}" class="list-item">
+                            <a>Activity</a>
+                        </li>
+                        <li [routerLink]="['/threads']" [queryParams]="{ genre: 'moba'}" class="list-item">
+                            <a>Account</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </section>
+
+        </aside>
+    </section> -->
+
+    <div class="main-profile">
+        <div class="form-label">
+            <span>My Profile</span>
+
+        </div>
+        <section class="profile-info">
+            <img class="profile-pic" src="{{profile.photoUrl}}" alt="profile_picture">
+
+            <section class="profile-info-info">
+                <label for="username">Username</label>
+                <h2 class="username">{{profile.username}}</h2>
+
+                <label for="memberships">Threads</label>
+                <h3 class="memberships">{{threads.length}}</h3>
+
+            </section>
 
         </section>
 
-    </section>
-
-    <section class="profile-actions" *ngIf="profile.id == currentUser">
-        <button class="profile-btn delete" (click)="onDelete()">Delete</button>
-        <button class="profile-btn" routerLink="/edit-profile">Edit</button>
-    </section>
-
+        <section class="profile-actions" *ngIf="profile.id == currentUser">
+            <button class="profile-btn delete" (click)="onDelete()">Delete</button>
+            <button class="profile-btn" routerLink="/edit-profile">Edit</button>
+        </section>
+    </div>
 </main>

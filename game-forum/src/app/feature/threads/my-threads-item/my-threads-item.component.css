@@ -1,12 +1,9 @@
 .threads-thread {
-    background-color: white;
-    border: 1px solid #00009A;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
-    margin-bottom: 1rem;
-    border-radius: 1rem;
+    margin-bottom: 2rem;
     cursor: pointer;
     transition: 0.2s ease-in-out;
     font-family: sans-serif;
@@ -14,11 +11,13 @@
 }
 
 .threads-thread:hover {
-    background-color: #00009A;
-    color:white
+    background-color: var(--active);
+    color: var(--dark);
 }
 
 .thread-img {
-    max-width: 10%;
+    width: 50px;
+    height: 50px;
+    margin-left: 2rem;
     border-radius: 0.5rem;
 }

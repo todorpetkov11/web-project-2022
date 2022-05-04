@@ -36,14 +36,14 @@
     width: 100%;
 }
 
-.input.comment {
+.textarea.comment {
     background: transparent;
     border: 1px solid transparent;
     color: var(--white);
     font-size: 1rem;
 }
 
-.input.comment:focus {
+.textarea.comment:focus {
     border-bottom: 1px solid var(--active);
 }
 

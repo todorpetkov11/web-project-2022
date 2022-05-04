@@ -3,10 +3,10 @@
         <section class="comment">
             <form [formGroup]="form" class="comment-form" id="comment-form" (submit)="onPost()">
                 <img class="userPfp" src="{{currentUserPfp}}" alt="">
-                <input formControlName="content" class="input comment" name="game" id="" cols="1" rows="5"
-                    placeholder="Your comment..." (focus)="onFormFocus()" >
+                <textarea formControlName="content" class="textarea comment" name="game" id="" cols="1" rows="2"
+                    placeholder="Your comment..." (focus)="onFormFocus()"></textarea>
             </form>
-            <button [ngClass]="{'visible': formSelected}" class="form-btn" form="comment-form" type="submit">Post</button>
+            <button [disabled]="form.invalid" [ngClass]="{'visible': formSelected}" class="form-btn" form="comment-form" type="submit">Post</button>
         </section>
     </div>
     <div *ngIf="!isLogged()">

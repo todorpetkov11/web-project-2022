@@ -1,19 +1,20 @@
+.main {
+    margin-top: 0rem;
+}
+
 .main-profile {
     position: relative;
-    margin: 12rem 30rem 5rem 30rem;
+    width: 100%;
+    margin: 0 20rem 0 20rem;
     padding: 3rem;
-    border: 1px solid var(--primary);
-    border-radius: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: var(--primary);
     background-color: var(--light);
     max-width: 100%;
     text-align: center;
-    height: 100vh;
+    color: var(--white);
 }
-
 
 .profile-pic {
     height: 10rem;

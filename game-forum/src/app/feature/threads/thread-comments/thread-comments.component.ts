@@ -36,7 +36,7 @@ export class ThreadCommentsComponent implements OnInit {
     this.commentService.retrieveComments(this.threadId!).subscribe({
       next: (comments) => {
         console.log(comments)
-        this.comments = comments
+        this.comments = comments.reverse()
       }
     })
   }
@@ -52,7 +52,8 @@ export class ThreadCommentsComponent implements OnInit {
     data['threadId'] = Number(this.threadId);
     this.commentService.postComment(data).subscribe({
       next: (comment) => {
-        this.comments.push(comment)
+        this.comments.unshift(comment)
+        this.form.reset()
       }
     })
   }

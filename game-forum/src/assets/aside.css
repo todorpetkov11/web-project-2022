@@ -1,0 +1,78 @@
+.aside {
+    background-color: var(--light);
+    padding: 1rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.search p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    color: var(--white);
+}
+
+.search input {
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    border: none;
+    width: 75%;
+}
+
+.search button {
+    border-left: var(--light) 1px solid;
+    border-top: 1px var(--light) solid;
+    border-right: 1px solid var(--dark);
+    border-bottom: 1px solid var(--dark);
+    border-radius: 50%;
+    padding: 0.2rem;
+    background-color: var(--primary);
+    color: var(--white);
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.search button:hover {
+    background-color: var(--active);
+    color: var(--dark);
+    border: 1px solid var(--dark);
+}
+
+.aside-list-title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding-top: 1rem;
+    padding-bottom: 0.4rem;
+    color: var(--white);
+}
+
+.list-item {
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: 0.2s ease-in-out;
+
+
+}
+
+.list-item>* {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.list-item:hover {
+    background-color: var(--active);
+
+}
+
+.list-item:hover>* {
+    color: var(--dark);
+}
+
+.aside-list-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

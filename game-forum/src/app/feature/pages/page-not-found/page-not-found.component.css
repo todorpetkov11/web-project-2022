@@ -1,9 +1,8 @@
 .not-found-section {
-    height: calc(100vh);
+    height: 100vh;
     text-align: center;
-    color: #00009A;
+    color: var(--white);
     padding-top: 7rem;
-    background-color: #FFFFF0;
     margin-top: 9rem;
 
 }
@@ -19,4 +18,8 @@
 p {
     margin-bottom: 2rem;
     font-size: 1.2rem;
+}
+
+a { 
+    color: var(--active);
 }

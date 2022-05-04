@@ -2,6 +2,8 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
+import { Validation } from '../validators';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -19,10 +21,21 @@ export class RegisterComponent {
   form: FormGroup = this.fb.group({
     email: new FormControl('', [Validators.required, Validators.email]),
     username: new FormControl('', [Validators.required, Validators.maxLength(15)]),
-    password: new FormControl('', [Validators.required]),
-    rePassword: new FormControl('', [Validators.required]),
-    photoUrl: new FormControl('')
-  })
+    photoUrl: new FormControl(''),
+    password: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(40)
+      ]
+    ],
+    confirmPassword: ['', Validators.required]
+  },
+    {
+      validators: [Validation.match('password', 'confirmPassword')]
+    }
+  );
 
   onFileSelected(event: any) {
     const reader = new FileReader

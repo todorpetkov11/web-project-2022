@@ -2,6 +2,7 @@
 @import url(buttons.css);
 @import url(forms.css);
 @import url(typography.css);
+@import url(aside.css);
 
 
 :root {
@@ -9,7 +10,7 @@
     --dark: #080808;
     --light: #212121;
     --white: white;
-    --active: #dfc800;
+    --active: #dfbe02;
     --red: #F2020A;
     --green: green;
 
@@ -28,4 +29,10 @@ input::selection {
 
 input:focus {
     outline: none;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    margin: 9rem 0 10rem 0;
 }

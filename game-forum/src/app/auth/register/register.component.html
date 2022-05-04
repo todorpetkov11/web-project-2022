@@ -12,8 +12,7 @@
             </div>
 
             <label class="label" for="name">Username</label>
-            <input formControlName="username" class="input" type="text" name="name"
-            [ngClass]="{'invalid': form.controls['username'].touched && 
+            <input formControlName="username" class="input" type="text" name="name" [ngClass]="{'invalid': form.controls['username'].touched && 
         form.controls['username'].invalid, 'valid':  
         form.controls['username'].valid}">
 
@@ -23,8 +22,7 @@
             </div>
 
             <label class="label" for="email">Email</label>
-            <input formControlName="email" class="input" type="email" name="email"
-            [ngClass]="{'invalid': form.controls['email'].touched && 
+            <input formControlName="email" class="input" type="email" name="email" [ngClass]="{'invalid': form.controls['email'].touched && 
         form.controls['email'].invalid, 'valid':  
         form.controls['email'].valid}">
 
@@ -33,9 +31,9 @@
                 <p>This is not a valid email</p>
             </div>
 
+
             <label class="label" for="password">Password</label>
-            <input formControlName="password" class="input" type="password" name="password"
-            [ngClass]="{'invalid': form.controls['password'].touched && 
+            <input formControlName="password" class="input" type="password" name="password" [ngClass]="{'invalid': form.controls['password'].touched && 
         form.controls['password'].invalid, 'valid':  
         form.controls['password'].valid}">
 
@@ -45,19 +43,20 @@
             </div>
 
             <label class="label" for="re-password">Repeat Password</label>
-            <input formControlName="rePassword" class="input" type="password" name="re-password"
-            [ngClass]="{'invalid': form.controls['rePassword'].touched && 
-        form.controls['rePassword'].invalid, 'valid':  
-        form.controls['rePassword'].valid}">
+            <input formControlName="confirmPassword" class="input" type="password" name="re-password" [ngClass]="{'invalid': form.controls['password'].dirty &&
+        form.controls['confirmPassword'].invalid, 'valid':  
+        form.controls['confirmPassword'].valid}">
 
-            <div class="error re-password-error" [ngClass]="{'error-visisble': form.controls['rePassword'].touched && 
-        form.controls['rePassword'].invalid}">
+            <div class="error re-password-error" [ngClass]="{'error-visisble': form.controls['password'].dirty &&
+            form.controls['confirmPassword'].invalid, '':  
+            form.controls['confirmPassword'].valid} ">
                 <p>Passwords don't match</p>
             </div>
 
             <label class="label" for="fileUpload">Profile picture</label>
 
-            <input formControlName="photoUrl" type="file" class="file-input" #fileUpload (change)="onFileSelected($event)">
+            <input formControlName="photoUrl" type="file" class="file-input" #fileUpload
+                (change)="onFileSelected($event)">
             <p>{{ fileName }}</p>
             <div class="file-upload">
 
@@ -68,7 +67,8 @@
 
         </form>
 
-        <button [disabled]="form.invalid" class="form-btn" type="submit" form="register-form" value="Submit">Submit</button>
+        <button [disabled]="form.invalid" class="form-btn" type="submit" form="register-form"
+            value="Submit">Submit</button>
         <p>Already have an account? <a routerLink="/login">Login here!</a></p>
     </section>
 </main>
