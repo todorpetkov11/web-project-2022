@@ -21,7 +21,8 @@ export class ThreadDetailsComponent implements OnInit {
   faShare = faShare
   faReport = faCircleExclamation
   faPlus = faPlusCircle
-  liked: boolean | ILike;
+
+  liked: boolean = false;
   saved: boolean = false
   thread: IThread;
   likes: ILike[];
@@ -50,13 +51,18 @@ export class ThreadDetailsComponent implements OnInit {
 
       },
       complete: () => {
-        this.liked = this.canLike()
+        this.isLiked()
       }
     })
 
   }
 
-  public likeHandler(): void {
+  public onLikeClick(): void {
+    this.likeHandler()  
+    this.liked = !this.liked
+  } 
+  
+  private likeHandler(): void {
     let like = this.findLike()
     if (like) {
       const index = this.likes.indexOf(like)
@@ -74,11 +80,6 @@ export class ThreadDetailsComponent implements OnInit {
 
   }
 
-  public onLikeClick(): void {
-    this.likeHandler()
-    this.liked = !this.liked
-  }
-
   private findLike(): ILike | null {
     const userId = this.userService.currentUserId
     let likeToRemove: ILike | null = null;
@@ -91,15 +92,15 @@ export class ThreadDetailsComponent implements OnInit {
   }
 
 
-  private canLike(): boolean {
+  private isLiked() {
     const userId = this.userService.currentUserId
-    let likeable: boolean = true
     this.likes.forEach((like) => {
       if (like.userId === userId) {
-        likeable = false
+        this.liked = true
+        return
       }
     })
-    return likeable
+    return
   }
 
 

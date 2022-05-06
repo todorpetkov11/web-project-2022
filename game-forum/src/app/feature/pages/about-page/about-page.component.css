@@ -15,7 +15,7 @@
 .about-section{
     margin: 2rem 10rem 2rem 10rem;
     text-align: left;
-    background-color: var(--light);
+    background-color: var(--dark);
     padding: 4rem;
     font-size: 1.2rem;
     color: var(--white);

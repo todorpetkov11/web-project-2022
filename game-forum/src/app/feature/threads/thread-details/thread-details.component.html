@@ -22,7 +22,7 @@
                 <h3>Likes: {{likes.length}}</h3>
                 
                 <div class="details-actions">
-                    <fa-icon [ngClass]="{'liked': !liked, '': liked}" (click)="onLikeClick()" class="icon"
+                    <fa-icon [ngClass]="{'liked': liked, '': !liked}" (click)="onLikeClick()" class="icon"
                         [icon]="faHeart"></fa-icon>
                     <fa-icon [ngClass]="{'saved': saved, '': !saved}" (click)="onSaveClick()" class="icon"
                         [icon]="faPlus"></fa-icon>

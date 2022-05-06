@@ -18,8 +18,9 @@
 
 .main-body {
     overflow-x: hidden;
-    background: rgb(162, 19, 20);
-    background: linear-gradient(0deg, rgba(162, 19, 20, 1) 0%, rgb(70, 69, 69) 58%, rgba(8, 8, 8, 1) 100%);
+    /* background: rgb(162, 19, 20);
+    background: linear-gradient(0deg, rgba(162, 19, 20, 1) 0%, rgb(70, 69, 69) 58%, rgba(8, 8, 8, 1) 100%); */
+    background-color: var(--light);
 }
 
 input::selection {

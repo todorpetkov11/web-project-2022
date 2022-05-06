@@ -25,7 +25,7 @@ export class ThreadCommentsComponent implements OnInit {
   formSelected: boolean = false;
 
   form: FormGroup = this.fb.group({
-    content: new FormControl('', [Validators.required])
+    content: new FormControl('', [Validators.required, Validators.minLength(1)])
   })
 
   isLogged() {

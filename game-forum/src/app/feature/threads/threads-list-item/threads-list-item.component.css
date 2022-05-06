@@ -5,6 +5,8 @@
     color: var(--white);
     transition: 0.3s ease-out;
     height: 10rem;
+    background-color: var(--dark);
+    border: 1px solid var(--primary);
 }
 
 
@@ -60,7 +62,7 @@
 }
 
 .main-card:hover {
-    border-color: var(--white);
+    border-color: var(--active);
     background-color: var(--active);
     color: var(--dark);
     transform: scale(1.05);

@@ -14,8 +14,8 @@ export class LikeService {
   constructor(private http: HttpClient) { }
 
 
-  getLikesByProfileId(profileId: string): Observable<IThread[]> {
-    return this.http.get<IThread[]>(`${apiUrl}/threads/?authorId=${profileId}`)
+  getLikesByProfileId(profileId: string): Observable<ILike[]> {
+    return this.http.get<ILike[]>(`${apiUrl}/threads/?authorId=${profileId}`)
   }
 
   likeThread(threadId: string, userId: string): Observable<ILike> {
