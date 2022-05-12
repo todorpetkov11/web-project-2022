@@ -1,6 +1,6 @@
 <div class="main">
     <div class="main-main">
-        <section class="profile-actions" *ngIf="thread.authorId == currentUser!">
+        <section class="profile-actions" *ngIf="thread.author == currentUser!">
             <button class="profile-btn delete" (click)="onDelete()" >Delete</button>
             <button class="profile-btn" routerLink="/edit-profile">Edit</button>
         </section>
@@ -14,11 +14,11 @@
 
             </div>
             <div class="img-wrap">
-                <img class="details-img" src="{{thread.photoUrl}}" alt="">
+                <img class="details-img" src="{{thread.image}}" alt="">
             </div>
 
             <div class="details-bot-wrap">
-                <h3 routerLink="/profile/{{thread.authorId}}">{{thread.authorName}}</h3>
+                <h3 routerLink="/profile/{{thread.author}}">{{thread.author}}</h3>
                 <h3>Likes: {{likes.length}}</h3>
                 
                 <div class="details-actions">

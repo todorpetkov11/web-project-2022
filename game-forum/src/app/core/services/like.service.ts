@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { ILike } from '../interfaces/like';
-import { IThread } from '../interfaces/thread';
 
-const apiUrl = 'http://localhost:3000'
+const apiUrl = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'

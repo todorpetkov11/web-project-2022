@@ -1,14 +1,12 @@
 export interface IThread {
-
-    id: string,
     title: string,
-    photoUrl: string,
-    content: string,
-    authorId: 2,
-    authorName: string,
-    game: string,
+    id: string,
     description: string,
+    game: string,
+    author: number,
+    image: string,
     likes: [],
-    imagePath: any
-
+    comments: []
 }
+
+

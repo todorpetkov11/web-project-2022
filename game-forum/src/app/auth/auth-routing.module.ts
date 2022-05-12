@@ -26,9 +26,8 @@ const routes: Routes = [
     },
 
     {
-        path: 'profile/:profileId',
+        path: 'profile/:username',
         component: ProfileComponent,
-        canActivate: [AuthenticationGuard],
         data: { animation: 'profilePage' }
     },
 

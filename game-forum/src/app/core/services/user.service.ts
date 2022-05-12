@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { IUser } from '../interfaces/user';
 
 
-const apiUrl = 'http://localhost:3000'
+const apiUrl = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -53,9 +54,6 @@ export class UserService {
 
   login(loginData: { email: string, password: string }): Observable<IUser> {
     return this.http.post<IUser>(`${apiUrl}/login`, loginData)
-      .pipe(
-        tap(user => localStorage.setItem("user", JSON.stringify(user.user)))
-      )
   }
 
   register(registerData: { username: string, email: string, password: string, photoUrl: string }): Observable<IUser> {
@@ -67,8 +65,8 @@ export class UserService {
     console.log(localStorage)
   }
 
-  getProfile(userId: string): Observable<IUser> {
-    return this.http.get<IUser>(`${apiUrl}/users/${userId}`)
+  getProfile(username: string): Observable<IUser> {
+    return this.http.get<IUser>(`${apiUrl}/users/${username}`)
   }
 
   editProfile(userId: string, editData: { username: string, photoUrl: string }): Observable<IUser> {

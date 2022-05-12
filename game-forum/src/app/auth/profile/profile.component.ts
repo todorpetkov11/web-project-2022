@@ -21,16 +21,15 @@ export class ProfileComponent implements OnInit {
   currentUser: string = this.userService.currentUserId
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.paramMap.get('profileId')
-    this.userService.getProfile(id!).subscribe({
+    const username = this.activatedRoute.snapshot.paramMap.get('username')
+    this.userService.getProfile(username!).subscribe({
       next:
         (profile) => {
           this.profile = profile
-        }
-    })
-    this.threadService.getThreadsByProfileId(id!).subscribe({
-      next: threads => {
-        this.threads = threads
+          this.threads = profile.threads
+        },
+      error: (error) => {
+        console.log(error)
       }
     })
   }
