@@ -23,10 +23,8 @@ export class ThreadsListComponent implements OnInit {
         if (!query) {
           this.threadService.getAllThreads().subscribe({
             next: (threads) => {
+              console.log(threads)
               this.threads = threads
-              // this.threads.forEach(thread => {
-              //   thread.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl(thread.photoUrl)
-              // })
             }
           })
         }
@@ -35,9 +33,6 @@ export class ThreadsListComponent implements OnInit {
           this.threadService.getThreadsWithParams(param[0], param[1]).subscribe({
             next: (threads) => {
               this.threads = threads
-              // this.threads.forEach(thread => {
-              //   thread.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl(thread.photoUrl)
-              // })
             }
           })
         }

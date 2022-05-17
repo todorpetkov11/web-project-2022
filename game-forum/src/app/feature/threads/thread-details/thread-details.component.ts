@@ -6,6 +6,7 @@ import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { ILike } from 'src/app/core/interfaces/like';
 import { IThread } from 'src/app/core/interfaces/thread';
+import { CommentService } from 'src/app/core/services/comment.service';
 import { LikeService } from 'src/app/core/services/like.service';
 import { ThreadService } from 'src/app/core/services/thread.service';
 import { UserService } from 'src/app/core/services/user.service';
@@ -34,7 +35,7 @@ export class ThreadDetailsComponent implements OnInit {
     private router: Router) { }
 
   threadId: string | null = this.activatedRoute.snapshot.paramMap.get('threadId')
-  currentUser: number = this.userService.currentUserId
+  currentUser: string = this.userService.currentUserUsername
 
   ngOnInit(): void {
     this.threadService.getThreadById(this.threadId!).subscribe({
@@ -47,6 +48,7 @@ export class ThreadDetailsComponent implements OnInit {
     })
     this.threadService.getThreadLikes(this.threadId!).subscribe({
       next: (likes) => {
+        console.log(likes)
         this.likes = likes
 
       },
@@ -54,14 +56,13 @@ export class ThreadDetailsComponent implements OnInit {
         this.isLiked()
       }
     })
-
   }
 
   public onLikeClick(): void {
-    this.likeHandler()  
+    this.likeHandler()
     this.liked = !this.liked
-  } 
-  
+  }
+
   private likeHandler(): void {
     let like = this.findLike()
     if (like) {

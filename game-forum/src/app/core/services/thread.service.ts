@@ -31,7 +31,7 @@ export class ThreadService {
   }
 
   getThreadLikes(threadId: string): Observable<ILike[]> {
-    return this.http.get<ILike[]>(`${apiUrl}/likes/?threadId=${threadId}`)
+    return this.http.get<ILike[]>(`${apiUrl}/likes/thread/${threadId}`)
   }
 
   createThread(threadData: {}): Observable<IThread> {

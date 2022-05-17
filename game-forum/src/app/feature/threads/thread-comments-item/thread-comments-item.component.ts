@@ -16,7 +16,7 @@ export class ThreadCommentsItemComponent implements OnInit {
   commenter: IUser;
   
   ngOnInit(): void {
-     this.userService.getProfile(this.comment.userId).subscribe({
+     this.userService.getProfile(this.comment.user).subscribe({
        next: (user) => {
          this.commenter = user
        }

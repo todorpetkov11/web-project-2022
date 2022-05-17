@@ -1,6 +1,6 @@
 <div class="main">
     <div class="main-main">
-        <section class="profile-actions" *ngIf="thread.author == currentUser!">
+        <section class="profile-actions" *ngIf="thread?.author == currentUser!">
             <button class="profile-btn delete" (click)="onDelete()" >Delete</button>
             <button class="profile-btn" routerLink="/edit-profile">Edit</button>
         </section>
@@ -8,18 +8,18 @@
             
             <div class="details-top-wrap">
                 <section class="main-details-title">
-                    <p class="title">{{thread.title}}</p>
-                    <p class="game">{{thread.game}}</p>
+                    <p class="title">{{thread?.title}}</p>
+                    <p class="game">{{thread?.game}}</p>
                 </section>
 
             </div>
             <div class="img-wrap">
-                <img class="details-img" src="{{thread.image}}" alt="">
+                <img class="details-img" src="{{thread?.image}}" alt="">
             </div>
 
             <div class="details-bot-wrap">
-                <h3 routerLink="/profile/{{thread.author}}">{{thread.author}}</h3>
-                <h3>Likes: {{likes.length}}</h3>
+                <h3 routerLink="/profile/{{thread?.author}}">{{thread?.author}}</h3>
+                <h3>Likes: {{likes?.length}}</h3>
                 
                 <div class="details-actions">
                     <fa-icon [ngClass]="{'liked': liked, '': !liked}" (click)="onLikeClick()" class="icon"
@@ -32,19 +32,10 @@
             </div>
 
             <p class="content">
-                Blizzard have rolled out the latest patch for the game last night.
-                3.3.5 comes with Icecrown Citadel instance both heroic and normal, for 10 and 25 people respectively.
-                Blizzard have rolled out the latest patch for the game last night.
-                3.3.5 comes with Icecrown Citadel instance both heroic and normal, for 10 and 25 people respectively.
-                Blizzard have rolled out the latest patch for the game last night.
-                3.3.5 comes with Icecrown Citadel instance both heroic and normal, for 10 and 25 people respectively.
-                Blizzard have rolled out the latest patch for the game last night.
-                3.3.5 comes with Icecrown Citadel instance both heroic and normal, for 10 and 25 people respectively.
+               {{thread?.body}}
             </p>
         </section>
-
         <app-thread-comments></app-thread-comments>
-
     </div>
 
 </div>

@@ -35,8 +35,8 @@ export class ThreadCommentsComponent implements OnInit {
   ngOnInit(): void {
     this.commentService.retrieveComments(this.threadId!).subscribe({
       next: (comments) => {
+        this.comments = comments
         console.log(comments)
-        this.comments = comments.reverse()
       }
     })
   }

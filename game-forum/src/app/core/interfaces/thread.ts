@@ -1,9 +1,10 @@
 export interface IThread {
-    title: string,
     id: string,
+    title: string,
     description: string,
+    body: string,
     game: string,
-    author: number,
+    author: string,
     image: string,
     likes: [],
     comments: []

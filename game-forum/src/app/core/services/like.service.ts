@@ -20,7 +20,7 @@ export class LikeService {
 
   likeThread(threadId: string, userId: string): Observable<ILike> {
     const data = { threadId, userId }
-    return this.http.post<ILike>(`${apiUrl}/likes`, data)
+    return this.http.post<ILike>(`${apiUrl}/likes/thread${threadId}`, data)
   }
 
   removeLike(likeId: string): Observable<ILike> {
