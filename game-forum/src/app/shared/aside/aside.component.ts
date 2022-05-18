@@ -21,7 +21,7 @@ export class AsideComponent {
 
   onSearch(): void {
     console.log(this.form.value)
-    this.router.navigateByUrl(`threads?game=${this.form.value['content']}`)
+    this.router.navigateByUrl(`threads?search=${this.form.value['content']}`)
   }
 
 }

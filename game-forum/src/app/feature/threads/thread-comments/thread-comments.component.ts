@@ -19,7 +19,7 @@ export class ThreadCommentsComponent implements OnInit {
     private commentService: CommentService,) { }
 
   currentUser: string = this.userService.currentUserId
-  threadId: string | null = this.activatedRoute.snapshot.paramMap.get('threadId')
+  threadId: string | null;
   comments: IComment[];
   currentUserPfp: string = this.userService.currentUserPfp;
   formSelected: boolean = false;
@@ -33,10 +33,10 @@ export class ThreadCommentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.threadId  = this.activatedRoute.firstChild?.snapshot.params['threadId']
     this.commentService.retrieveComments(this.threadId!).subscribe({
       next: (comments) => {
         this.comments = comments
-        console.log(comments)
       }
     })
   }

@@ -8,19 +8,19 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'home'
+    redirectTo: 'threads'
   },
 
   {
     path: 'home',
-    component: HomePageComponent,
-    data: { animation: 'homePage' },
+    pathMatch: 'full',
+    redirectTo: 'threads'
   },
 
   {
     path: 'threads',
     component: HomePageComponent,
-    data: { animation: 'threadsPage' }
+    data: { animation: 'threadsPage' },
   },
 
   {

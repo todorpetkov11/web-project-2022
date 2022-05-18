@@ -34,10 +34,11 @@ export class ThreadDetailsComponent implements OnInit {
     private userService: UserService,
     private router: Router) { }
 
-  threadId: string | null = this.activatedRoute.snapshot.paramMap.get('threadId')
+  threadId: string;
   currentUser: string = this.userService.currentUserUsername
 
   ngOnInit(): void {
+    this.threadId  = this.activatedRoute.firstChild?.snapshot.params['threadId']
     this.threadService.getThreadById(this.threadId!).subscribe({
       next: (thread) => {
         this.thread = thread
@@ -48,7 +49,7 @@ export class ThreadDetailsComponent implements OnInit {
     })
     this.threadService.getThreadLikes(this.threadId!).subscribe({
       next: (likes) => {
-        console.log(likes)
+        console.log
         this.likes = likes
 
       },

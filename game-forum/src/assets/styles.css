@@ -33,7 +33,7 @@ input:focus {
 }
 
 .main {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 15rem auto;
     margin: 9rem 0 10rem 0;
 }
