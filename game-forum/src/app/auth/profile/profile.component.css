@@ -10,10 +10,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--light);
+    background-color: var(--dark);
     max-width: 100%;
     text-align: center;
     color: var(--white);
+    border: 1px solid var(--primary);
 }
 
 .profile-pic {
