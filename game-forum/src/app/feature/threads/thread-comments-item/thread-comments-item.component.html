@@ -1,9 +1,22 @@
 <section class="comment-comment">
-    <section class="comment-info">
-        <img class="comment-author-pfp" src="{{commenter.photoUrl}}" alt="">
-        <h3 class="comment-author">{{comment.user}}asdads</h3>
+    <section class="comment-header">
+        <div class="comment-info">
+            <img class="comment-author-pfp" src="{{commenter.photoUrl}}" alt="">
+            <h3 class="comment-author">{{comment.user}}asdads</h3>
+        </div>
+        <div>
+            <fa-icon *ngIf="admin" [ngClass]="{'visible': !admin, '': admin}" (click)="onCommentEdit(comment.id)"
+                class="icon add" [icon]="faEdit"></fa-icon>
+            <fa-icon *ngIf="admin" [ngClass]="{'visible': !admin, '': admin}" (click)="onCommentRemove()"
+                class="icon remove" [icon]="faRemove"></fa-icon>
+        </div>
     </section>
     <section class="comment-content">
-        <p>{{comment.body}}</p>
+        <p [hidden]="editMode">{{comment.body}}</p>
+        <form [hidden]="!editMode" [formGroup]="form" class="comment-form" id="comment-form" (submit)="onEdit()">
+            <textarea #input appAutofocus formControlName="content" class="textarea comment" name="game" id="" cols="1"
+                rows="1"></textarea>
+            <!-- <button [disabled]="form.invalid" class="form-btn" form="comment-form" type="submit">Post</button> -->
+        </form>
     </section>
 </section>

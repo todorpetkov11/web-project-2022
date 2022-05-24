@@ -1,6 +1,6 @@
 <div class="main">
     <div class="main-main">
-        <section class="profile-actions" *ngIf="thread?.author == currentUser!">
+        <section class="profile-actions" *ngIf="thread?.author == currentUser! || admin">
             <button class="profile-btn delete" (click)="onDelete()" >Delete</button>
             <button class="profile-btn" routerLink="/edit-profile">Edit</button>
         </section>

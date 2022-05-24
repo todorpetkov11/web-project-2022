@@ -12,6 +12,7 @@ import { MyThreadsItemComponent } from './my-threads-item/my-threads-item.compon
 import { ThreadCommentsComponent } from './thread-comments/thread-comments.component';
 import { ThreadCommentsItemComponent } from './thread-comments-item/thread-comments-item.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AutofocusDirective } from './directives/autofocus.directive';
 
 
 
@@ -20,12 +21,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [
     ThreadsListComponent,
     ThreadsListItemComponent,
+    AutofocusDirective,
     NewThreadComponent,
     ThreadDetailsComponent,
     MyThreadsComponent,
     MyThreadsItemComponent,
     ThreadCommentsComponent,
-    ThreadCommentsItemComponent
+    ThreadCommentsItemComponent,
   ],
   imports: [
     CommonModule,

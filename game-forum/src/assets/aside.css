@@ -19,6 +19,13 @@
     width: 75%;
 }
 
+.add input {
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    border: none;
+    width: 75%;
+}
+
 .search button {
     border-left: var(--light) 1px solid;
     border-top: 1px var(--light) solid;
@@ -47,14 +54,23 @@
     color: var(--white);
 }
 
+.list-title-wrap {
+    display: flex;
+    align-items: baseline;
+}
+
+.list-item-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .list-item {
     padding: 0.5rem;
-    text-align: center;
+    text-align: left;
     cursor: pointer;
     border-radius: 0.5rem;
-    transition: 0.2s ease-in-out;
-
-
+    transition: 0.2s ease-in-out;    
 }
 
 .list-item>* {
@@ -64,11 +80,18 @@
 
 .list-item:hover {
     background-color: var(--active);
-
 }
 
-.list-item:hover>* {
+.list-item:hover>a {
     color: var(--dark);
+}
+
+.list-item:hover {
+    background-color: var(--active);
+}
+
+.visible {
+    display: none;
 }
 
 .aside-list-lists {

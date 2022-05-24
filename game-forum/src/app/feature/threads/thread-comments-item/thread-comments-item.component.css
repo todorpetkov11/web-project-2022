@@ -11,7 +11,11 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
-    
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .comment-author-pfp {
@@ -26,4 +30,30 @@
     opacity: 0.6;
     font-size: 1.1rem;
     cursor: pointer;
+}
+
+.form-btn {
+    width: max-content;
+    height: max-content;
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.comment-form {
+    width: 100%;
+}
+
+.textarea.comment {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--white);
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.textarea.comment:focus {
+    border-bottom: 1px solid var(--active);
 }

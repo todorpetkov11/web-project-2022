@@ -17,7 +17,10 @@
             </div>
 
             <label class="label" for="game">Game</label>
-            <textarea formControlName="game" class="textarea" name="game" id="" cols="1" rows="1"></textarea>
+            <textarea formControlName="game" class="textarea" name="game" id="" cols="1" rows="1"
+            [ngClass]="{'invalid': form.controls['game'].touched && 
+            form.controls['game'].invalid, 'valid':  
+            form.controls['game'].valid}"></textarea>
 
             <div class="error email-error" [ngClass]="{'error-visisble': form.controls['game'].touched && 
         form.controls['game'].invalid}">
@@ -25,7 +28,9 @@
             </div>
 
             <label class="label" for="genre">Game genre</label>
-            <select formControlName="genre" class="select" name="genre">
+            <select formControlName="genre" class="select" name="genre" [ngClass]="{'invalid': form.controls['genre'].touched && 
+            form.controls['genre'].invalid, 'valid':  
+            form.controls['genre'].valid}">
                 <option value="mmorpg">MMORPG</option>
                 <option value="shooter">Shooter</option>
                 <option value="strategy">Strategy</option>
@@ -37,10 +42,15 @@
                 <option value="sports">Sports</option>
             </select>
 
-            <label class="label" for="fileUpload">Thread image</label>
+            <div class="error email-error" [ngClass]="{'error-visisble': form.controls['genre'].touched && 
+        form.controls['genre'].invalid}">
+                <p>Invalid game genre.</p>
+            </div>
 
-            <input formControlName="image" type="file" class="file-input" #fileUpload (change)="onFileSelected($event)">
+            <label class="label" for="fileUpload">Thread photo</label>
 
+            <input formControlName="photoUrl" type="file" class="file-input" #fileUpload
+                (change)="onFileSelected($event)">
             <p>{{ fileName }}</p>
             <div class="file-upload">
 
@@ -50,7 +60,10 @@
             </div>
 
             <label class="label" for="description">Description</label>
-            <textarea formControlName="description" class="textarea" name="description" cols="1" rows="2"></textarea>
+            <textarea formControlName="description" class="textarea" name="description" cols="1" rows="2"
+            [ngClass]="{'invalid': form.controls['description'].touched && 
+            form.controls['description'].invalid, 'valid':  
+            form.controls['description'].valid}"></textarea>
 
             <div class="error email-error" [ngClass]="{'error-visisble': form.controls['description'].touched && 
         form.controls['description'].invalid}">
@@ -58,7 +71,10 @@
             </div>
 
             <label class="label" for="content">Content</label>
-            <textarea formControlName="content" class="textarea" name="content" id="" cols="30" rows="10"></textarea>
+            <textarea formControlName="content" class="textarea" name="content" id="" cols="30" rows="10"
+            [ngClass]="{'invalid': form.controls['content'].touched && 
+            form.controls['content'].invalid, 'valid':  
+            form.controls['content'].valid}"></textarea>
 
             <div class="error email-error" [ngClass]="{'error-visisble': form.controls['content'].touched && 
         form.controls['content'].invalid}">

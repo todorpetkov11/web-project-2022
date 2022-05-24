@@ -32,6 +32,15 @@ input:focus {
     outline: none;
 }
 
+
+select::selection {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+select:focus {
+    outline: none;
+}
 .main {
     display: grid;
     grid-template-columns: 15rem auto;

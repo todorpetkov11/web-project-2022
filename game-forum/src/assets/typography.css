@@ -14,5 +14,9 @@ p {
     font-family: sans-serif;
     letter-spacing: 0.04rem;
  }
+
+ a { 
+   color: var(--active);
+}
  
  

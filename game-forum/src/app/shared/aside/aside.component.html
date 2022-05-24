@@ -4,89 +4,57 @@
             <p>quickserach</p>
             <form [formGroup]="form" (submit)="onSearch()" id="comment-form">
                 <input formControlName="content" type="text">
-                <button type="submit" form="comment-form">go</button>
+                <button [disabled]="form.invalid" type="submit" form="comment-form">go</button>
             </form>
         </section>
         <section class="aside-list">
-            <p class="aside-list-title">genre</p>
-            <div class="aside-list-lists">
-                <ul class="aside-list-list">
-                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'roleplay'}" class="list-item">
-                        <a>Roleplay</a>
-                    </li>
-
-                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'cards'}" class="list-item">
-                        <a>Cards</a>
-                    </li>
-
-                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'simulation'}" class="list-item">
-                        <a>Simulation</a>
-                    </li>
-                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'MOBA'}" class="list-item">
-                        <a>MOBA</a>
-                    </li>
-                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'adventure'}" class="list-item">
-                        <a>Adventure</a>
-                    </li>
-                    <li [routerLink]="['/threads']" [queryParams]="{genre: 'mmorpg'}" class="list-item">
-                        <a>MMORPG</a>
-                    </li>
-
-                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'strategy'}" class="list-item">
-                        <a>Strategy</a>
-                    </li>
-
-                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'battleroyale'}" class="list-item">
-                        <a>Battle royale</a>
-                    </li>
-                    <li [routerLink]="['/threads']" [queryParams]="{ genre: 'sports'}" class="list-item">
-                        <a>Sports</a>
-                    </li>
+            <div class="list-title-wrap">
+                <p class="aside-list-title">genre</p>
+                <fa-icon *ngIf="admin" [ngClass]="{'visible': !admin, '': admin, 'clicked': genreAddClicked}"
+                    (click)="onGenreAddClick()" class="icon add" [icon]="faAdd"></fa-icon>
+            </div>
+            <section class="add" [ngClass]="{'visible': !genreAddClicked}">
+                <form [formGroup]="genreForm" (submit)="onGenreSubmit()" id="genre-form">
+                    <input formControlName="name" type="text">
+                    <button style="display: none;" [disabled]="genreForm.invalid" type="submit"
+                        form="genre-form"></button>
+                </form>
+            </section>
+            <div class="aside-list-lists" class="aside-list-list" *ngFor="let genre of genreList">
+                <ul>
+                    <div class="list-item-wrap">
+                        <li [routerLink]="['/threads']" [queryParams]="{ genre: genre.name}" class="list-item">
+                            <a>{{genre.name}}</a>
+                        </li>
+                        <fa-icon *ngIf="admin" [ngClass]="{'hidden': !admin, '': admin}"
+                            (click)="onRemoveGenreClick(genre.id)" class="icon remove" [icon]="faRemove"></fa-icon>
+                    </div>
                 </ul>
             </div>
         </section>
         <section class="aside-list">
-            <p class="aside-list-title">popular now</p>
-            <div class="aside-list-lists">
+            <div class="list-title-wrap">
+                <p class="aside-list-title">popular now</p>
+                <fa-icon *ngIf="admin" [ngClass]="{'hidden': !admin, '': admin}" (click)="onPopularAddClick()"
+                    [ngClass]="{'hidden': !admin, '': admin, 'clicked': popularAddClicked}" class="icon add"
+                    [icon]="faAdd"></fa-icon>
+            </div>
+            <section class="add" [ngClass]="{'visible': !popularAddClicked}">
+                <form [formGroup]="popularForm" (submit)="onPopularSubmit()" id="popular-form">
+                    <input formControlName="name" type="text">
+                    <button style="display: none;" [disabled]="popularForm.invalid" type="submit"
+                        form="popular-form"></button>
+                </form>
+            </section>
+            <div class="aside-list-lists" *ngFor="let popular of popularList">
                 <ul class="aside-list-list">
-                    <li [routerLink]="['/threads']" [queryParams]="{game: 'League of Legends'}" class="list-item">
-                        <a>League of Legends</a>
-                    </li>
-
-                    <li [routerLink]="['/threads']" [queryParams]="{game: 'Elden Ring'}" class="list-item">
-                        <a>Elden
-                            Ring</a>
-                    </li>
-
-                    <li [routerLink]="['/threads']" [queryParams]="{game: 'World of Warcraft: Classic'}"
-                        class="list-item">
-                        <a>World of Warcraft:
-                            Classic</a>
-                    </li>
-                    <li [routerLink]="['/threads']" [queryParams]="{game: 'Apex Legends'}" class="list-item">
-                        <a>Apex
-                            Legends</a>
-                    </li>
-                    <li [routerLink]="['/threads']" [queryParams]="{game: 'Overwatch'}" class="list-item">
-                        <a>Overwatch</a>
-                    </li>
-                    <li [routerLink]="['/threads']" [queryParams]="{game: 'Dota 2'}" class="list-item">
-                        <a>Dota 2</a>
-                    </li>
-
-                    <li [routerLink]="['/threads']" [queryParams]="{game: 'Valoran'}" class="list-item">
-                        <a>Valorant</a>
-                    </li>
-
-                    <li [routerLink]="['/threads']" [queryParams]="{game: 'GTA V'}" class="list-item">
-                        <a>GTA V</a>
-                    </li>
-                    <li [routerLink]="['/threads']" [queryParams]="{game: 'CS:GO'}" class="list-item">
-                        <a>CS:GO</a>
-                    </li>
-                    <li [routerLink]="['/threads']" [queryParams]="{game: 'FIFA 22'}" class="list-item">
-                        <a>FIFA 22</a>
-                    </li>
+                    <div class="list-item-wrap">
+                        <li [routerLink]="['/threads']" [queryParams]="{ game: popular.name}" class="list-item">
+                            <a>{{popular.name}}</a>
+                        </li>
+                        <fa-icon *ngIf="admin" [ngClass]="{'hidden': !admin, '': admin}"
+                            (click)="onRemovePopularClick(popular.id)" class="icon remove" [icon]="faRemove"></fa-icon>
+                    </div>
                 </ul>
             </div>
         </section>

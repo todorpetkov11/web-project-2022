@@ -51,6 +51,7 @@
     animation-name: unlike;
     animation-duration: 0.2s;
     opacity: 0.8;
+    color: var(--white);
 }
 
 @keyframes unlike {
@@ -79,4 +80,19 @@
     transform: rotate(45deg);
     display: inline-block;
     transition: 0.3s ease-in-out;
+}
+
+.clicked {
+    color: var(--green);
+    transform: rotate(45deg);
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+}
+
+.remove:hover {
+    color: var(--red);
+}
+
+.add:hover {
+    color: var(--green);
 }
