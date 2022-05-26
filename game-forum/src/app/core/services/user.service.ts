@@ -65,8 +65,8 @@ export class UserService {
     console.log(localStorage)
   }
 
-  getProfile(username: string): Observable<IUser> {
-    return this.http.get<IUser>(`${apiUrl}/users/${username}`)
+  getProfile(id: string): Observable<IUser> {
+    return this.http.get<IUser>(`${apiUrl}/users/${id}`)
   }
 
   editProfile(userId: string, editData: { username: string, photoUrl: string }): Observable<IUser> {

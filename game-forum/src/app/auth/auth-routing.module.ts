@@ -19,18 +19,19 @@ const routes: Routes = [
         data: { animation: 'registerPage' }
     },
 
+    
     {
-        path: 'profile/:username/threads',
-        component: MyThreadsComponent,
-        data: { animation: 'myThreadsPage' }
-    },
-
-    {
-        path: 'profile/:username',
+        path: 'profile/:id',
         component: ProfileComponent,
         data: { animation: 'profilePage' }
     },
-
+    
+    {
+        path: 'profile/:id/threads',
+        component: MyThreadsComponent,
+        data: { animation: 'myThreadsPage' }
+    },
+    
     {
         path: 'edit-profile',
         component: EditProfileComponent,

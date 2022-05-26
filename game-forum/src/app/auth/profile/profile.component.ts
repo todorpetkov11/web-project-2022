@@ -16,24 +16,23 @@ export class ProfileComponent implements OnInit {
 
   constructor(private userService: UserService, private activatedRoute: ActivatedRoute, private router: Router, private threadService: ThreadService) { }
 
-  profile: IUser;
+  user: IUser;
   threads: IThread[];
   currentUser: string = this.userService.currentUserId
 
   ngOnInit(): void {
-    const username = this.activatedRoute.snapshot.paramMap.get('username')
-    this.userService.getProfile(username!).subscribe({
+    const id = this.activatedRoute.snapshot.paramMap.get('id')
+    this.userService.getProfile(id!).subscribe({
       next:
-        (profile) => {
-          this.profile = profile
-          this.threads = profile.threads
+        (user) => {
+          this.user = user
+          this.threads = user.threads
         },
       error: (error) => {
         console.log(error)
       }
     })
   }
-
   onDelete() {
     this.userService.deleteUser().subscribe()
     this.userService.logout()

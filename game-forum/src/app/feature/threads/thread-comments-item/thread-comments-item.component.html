@@ -5,18 +5,21 @@
             <h3 class="comment-author">{{comment.user}}asdads</h3>
         </div>
         <div>
-            <fa-icon *ngIf="admin" [ngClass]="{'visible': !admin, '': admin}" (click)="onCommentEdit(comment.id)"
+            <fa-icon *ngIf="admin" [ngClass]="{'visible': !admin, '': admin}" (click)="onCommentEdit()"
                 class="icon add" [icon]="faEdit"></fa-icon>
             <fa-icon *ngIf="admin" [ngClass]="{'visible': !admin, '': admin}" (click)="onCommentRemove()"
                 class="icon remove" [icon]="faRemove"></fa-icon>
+
         </div>
     </section>
     <section class="comment-content">
         <p [hidden]="editMode">{{comment.body}}</p>
         <form [hidden]="!editMode" [formGroup]="form" class="comment-form" id="comment-form" (submit)="onEdit()">
-            <textarea #input appAutofocus formControlName="content" class="textarea comment" name="game" id="" cols="1"
-                rows="1"></textarea>
-            <!-- <button [disabled]="form.invalid" class="form-btn" form="comment-form" type="submit">Post</button> -->
+            <div>
+                <textarea #input appAutofocus formControlName="content" class="textarea comment" name="game" id=""
+                    cols="1" rows="1"></textarea>
+                <button [disabled]="form.invalid" class="form-btn edit" form="comment-form" type="submit">Edit</button>
+            </div>
         </form>
     </section>
 </section>

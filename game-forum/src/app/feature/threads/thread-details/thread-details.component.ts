@@ -41,6 +41,7 @@ export class ThreadDetailsComponent implements OnInit {
     this.threadId  = this.activatedRoute.firstChild?.snapshot.params['threadId']
     this.threadService.getThreadById(this.threadId!).subscribe({
       next: (thread) => {
+        console.log(thread)
         this.thread = thread
       },
       error: (error) => {

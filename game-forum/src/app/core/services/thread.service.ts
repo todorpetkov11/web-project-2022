@@ -22,8 +22,8 @@ export class ThreadService {
     return this.http.get<IThread>(`${apiUrl}/threads/${threadId}`)
   }
 
-  getThreadsByProfileId(profileId: string): Observable<IThread[]> {
-    return this.http.get<IThread[]>(`${apiUrl}/threads/?authorId=${profileId}`)
+  getThreadsByProfileId(id: string): Observable<IThread[]> {
+    return this.http.get<IThread[]>(`${apiUrl}/threads/user/${id}`)
   }
 
   getThreadsWithParams(searchBy: string, param: string): Observable<IThread[]> {
@@ -35,7 +35,7 @@ export class ThreadService {
   }
 
   createThread(threadData: {}): Observable<IThread> {
-    return this.http.post<IThread>(`${apiUrl}/threads`, threadData)
+    return this.http.post<IThread>(`${apiUrl}/threads/`, threadData)
   }
 
   deleteThread(threadId: string): Observable<IThread> {

@@ -5,5 +5,6 @@ export interface IUser {
     password: string;
     id: string;
     threads: [];
-    photoUrl: string
+    photoUrl: string;
+    banner: string
 }

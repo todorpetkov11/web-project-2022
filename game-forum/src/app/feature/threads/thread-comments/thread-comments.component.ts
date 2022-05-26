@@ -33,7 +33,7 @@ export class ThreadCommentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.threadId  = this.activatedRoute.firstChild?.snapshot.params['threadId']
+    this.threadId = this.activatedRoute.firstChild?.snapshot.params['threadId']
     this.commentService.retrieveComments(this.threadId!).subscribe({
       next: (comments) => {
         this.comments = comments
@@ -56,6 +56,10 @@ export class ThreadCommentsComponent implements OnInit {
         this.form.reset()
       }
     })
+  }
+
+  deleteComment(comment: IComment) {
+    this.comments = this.comments.filter(c => comment.id !== c.id)
   }
 
 }

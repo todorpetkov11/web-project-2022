@@ -23,7 +23,6 @@ export class ThreadsListComponent implements OnInit {
         if (!query) {
           this.threadService.getAllThreads().subscribe({
             next: (threads) => {
-              console.log(threads)
               this.threads = threads
             }
           })

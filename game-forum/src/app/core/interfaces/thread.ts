@@ -5,6 +5,7 @@ export interface IThread {
     body: string,
     game: string,
     author: string,
+    authorId: number,
     image: string,
     likes: [],
     comments: []

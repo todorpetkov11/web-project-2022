@@ -17,8 +17,7 @@
             </div>
 
             <label class="label" for="game">Game</label>
-            <textarea formControlName="game" class="textarea" name="game" id="" cols="1" rows="1"
-            [ngClass]="{'invalid': form.controls['game'].touched && 
+            <textarea formControlName="game" class="textarea" name="game" id="" cols="1" rows="1" [ngClass]="{'invalid': form.controls['game'].touched && 
             form.controls['game'].invalid, 'valid':  
             form.controls['game'].valid}"></textarea>
 
@@ -49,7 +48,7 @@
 
             <label class="label" for="fileUpload">Thread photo</label>
 
-            <input formControlName="photoUrl" type="file" class="file-input" #fileUpload
+            <input type="file" class="file-input" #fileUpload
                 (change)="onFileSelected($event)">
             <p>{{ fileName }}</p>
             <div class="file-upload">
@@ -60,8 +59,7 @@
             </div>
 
             <label class="label" for="description">Description</label>
-            <textarea formControlName="description" class="textarea" name="description" cols="1" rows="2"
-            [ngClass]="{'invalid': form.controls['description'].touched && 
+            <textarea formControlName="description" class="textarea" name="description" cols="1" rows="2" [ngClass]="{'invalid': form.controls['description'].touched && 
             form.controls['description'].invalid, 'valid':  
             form.controls['description'].valid}"></textarea>
 
@@ -71,8 +69,7 @@
             </div>
 
             <label class="label" for="content">Content</label>
-            <textarea formControlName="content" class="textarea" name="content" id="" cols="30" rows="10"
-            [ngClass]="{'invalid': form.controls['content'].touched && 
+            <textarea formControlName="content" class="textarea" name="content" id="" cols="30" rows="10" [ngClass]="{'invalid': form.controls['content'].touched && 
             form.controls['content'].invalid, 'valid':  
             form.controls['content'].valid}"></textarea>
 

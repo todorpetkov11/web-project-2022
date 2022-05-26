@@ -19,6 +19,14 @@ export class CommentService {
   }
 
   retrieveComments(threadId: string): Observable<IComment[]> {
-    return this.http.get<IComment[]>(`${apiUrl}/comments/thread/${threadId}/`) 
+    return this.http.get<IComment[]>(`${apiUrl}/comments/thread/${threadId}/`)
+  }
+
+  editComment(threadId: number, data: {}): Observable<IComment> {
+    return this.http.put<IComment>(`${apiUrl}/comments/${threadId}/`, data)
+  }
+
+  deleteComment(threadId: number): Observable<IComment> {
+    return this.http.delete<IComment>(`${apiUrl}/comments/${threadId}/`)
   }
 }

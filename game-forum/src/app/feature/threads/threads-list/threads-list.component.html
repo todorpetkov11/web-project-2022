@@ -1,7 +1,7 @@
 <div *ngIf="threads" class="main-main">
     <app-threads-list-item *ngFor="let thread of threads" [thread]="thread"></app-threads-list-item>
 </div>
-<div class="no-data" *ngIf="threads.length === 0">
+<div class="no-data" *ngIf="threads?.length === 0">
     <p>There aren't any threads yet!</p>
 </div>
 <div *ngIf="!threads" class="loading">

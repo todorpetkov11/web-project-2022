@@ -42,9 +42,19 @@
     visibility: visible;
 }
 
+.form-btn.edit {
+    visibility: visible;
+}
+
 .comment-form {
     width: 100%;
 }
+
+.comment-form div {
+    display: flex;
+    align-items: center;
+}
+
 
 .textarea.comment {
     background: transparent;

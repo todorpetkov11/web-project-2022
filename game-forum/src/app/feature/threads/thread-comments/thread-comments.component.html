@@ -16,6 +16,7 @@
     <div *ngIf="comments?.length === 0">
         <h1 class="no-comments">No comments yet! Be the first one!</h1>
     </div>
-    <app-thread-comments-item *ngFor="let comment of comments" [comment]="comment"></app-thread-comments-item>
+    <app-thread-comments-item *ngFor="let comment of comments" [comment]="comment" (delete)="deleteComment($event)">
+    </app-thread-comments-item>
 
 </section>
